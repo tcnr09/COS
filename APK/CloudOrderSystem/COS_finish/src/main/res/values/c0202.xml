@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c0202_txtCoffeeTop">咖啡類</string>
+    <string name="c0202_txtLightFoodTop">輕食</string>
+    <string name="c0202_txtDessertTop">甜點</string>
+    <string name="c0202_txtCart">購物車   ></string>
+    <string name="c0202_txtAmount">總計:</string>
+    <string name="c0202_t001">咖啡種類</string>
+    <string name="c0202_imgRight">右箭頭</string>
+    <string-array name="c0202_CoffeeList">
+        <item>典藏咖啡</item>
+        <item>卡布奇諾</item>
+        <item>乳香咖啡</item>
+        <item>摩卡咖啡</item>
+        <item>美式淡咖啡</item>
+        <item>養生黑咖啡</item>
+        <item>拿鐵咖啡</item>
+        <item>冰滴咖啡</item>
+        <item>特調咖啡</item>
+    </string-array>
+
+    <string-array name="c0202_LightFoodList">
+        <item>招牌雞排</item>
+        <item>吉利豬排</item>
+        <item>碳燒虱目魚</item>
+        <item>香酥鱈魚</item>
+        <item>紅燒牛肉飯</item>
+        <item>海鮮義大利墩飯(麵)</item>
+        <item>素食燴飯</item>
+    </string-array>
+
+
+
+</resources>

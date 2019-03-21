@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c0204_txt01">預計取餐時間</string>
+    <string name="c0204_txt02">訂購金額</string>
+    <string name="c0204_txt03">總金額</string>
+    <string name="c0204_txtLine"></string>
+    <string name="c0204_txtcb001">加購塑膠袋</string>
+    <string name="c0204_txtAddress">地址取得自.C0201</string>
+    <string name="c0204_txthow">方式取得自.C0201</string>
+    <string name="c0204_PickTime">時間取得自.C0201</string>
+    <string name="c0204_Amount1">金額取得自.C0203</string>
+    <string name="c0204_Amount2">金額取得自.C0203</string>
+    <string name="c0204_txt04">訂單明細</string>
+    <string name="c0204_btnNext">確認送出</string>
+    <string name="c0204_btnCancel">取消</string>
+    <string name="c0204_textCheck">修改</string>
+    <string name="c0204_sent">送出</string>
+</resources>

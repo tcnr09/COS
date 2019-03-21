@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:padding="@dimen/Spacing">
+
+    <TableRow
+        android:id="@+id/tab01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_grey_600">
+
+        <TextView
+            android:id="@+id/t_t001"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/t001"
+            android:textColor="@color/Fuchsia" />
+
+        <TextView
+            android:id="@+id/t_t002"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:text="@string/t002"
+            android:textColor="@color/Lime" />
+
+        <TextView
+            android:id="@+id/t_t003"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/t003"
+            android:textColor="@color/Aqua" />
+
+        <TextView
+            android:id="@+id/t_t004"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:text="@string/t004"
+            android:textColor="@color/Red" />
+
+        <TextView
+            android:id="@+id/t_t005"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60sp"
+            android:text="@string/t005"
+            android:textColor="@color/Yellow" />
+    </TableRow>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab01"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
+

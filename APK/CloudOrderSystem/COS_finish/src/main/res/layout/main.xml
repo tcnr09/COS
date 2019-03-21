@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b001s"
+    android:orientation="vertical"
+    tools:context=".Main">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/c0401_img01"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/SliderDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/c0401_img01"
+        android:background="@color/gold"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/c0401_img01" />
+
+    <LinearLayout
+        android:id="@+id/LL"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/SliderDots"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/b001s"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/main_imgbtn01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/darkorange"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/main_order" />
+
+        <ImageButton
+            android:id="@+id/main_imgbtn02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/Green"
+            app:srcCompat="@drawable/main_login"
+            android:contentDescription="@string/todo" />
+
+        <ImageButton
+            android:id="@+id/main_imgbtn03"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/White"
+            app:srcCompat="@drawable/main_card"
+            android:contentDescription="@string/todo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/LL"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cos_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_order" />
+
+        <TextView
+            android:id="@+id/cos_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_member" />
+
+        <TextView
+            android:id="@+id/cos_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_card" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/LL3"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/b001s"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/main_imgbtn04"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/Water"
+            app:srcCompat="@drawable/main_rec"
+            android:contentDescription="@string/todo" />
+
+        <ImageButton
+            android:id="@+id/main_imgbtn05"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/Aque"
+            app:srcCompat="@drawable/main_info"
+            android:contentDescription="@string/todo" />
+
+        <ImageButton
+            android:id="@+id/main_imgbtn06"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/Sliver"
+            app:srcCompat="@drawable/main_about"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/LL2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cos_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_record" />
+
+        <TextView
+            android:id="@+id/cos_member1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_about" />
+
+        <TextView
+            android:id="@+id/cos_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cos_park" />
+    </LinearLayout>
+
+
+</RelativeLayout>

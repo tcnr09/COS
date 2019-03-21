@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t001">停車場</string>
+    <string name="t002">緯度</string>
+    <string name="t003">經度</string>
+    <string name="t004">位置</string>
+    <string name="t005">更新時間</string>
+    <string name="t_title">縣市觀測點細懸浮微粒狀態更新時間</string>
+
+</resources>

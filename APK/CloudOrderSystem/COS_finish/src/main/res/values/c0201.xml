@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="c0201_txtOrderSetting">
+        <item>取餐方式</item>
+        <item>取餐時間</item>
+        <item>取餐店點</item>
+        <item>會員優惠券</item>
+    </string-array>
+
+    <string-array name="c0201_txtWhereToEat">
+        <item>外帶</item>
+        <item>內用</item>
+        <item>訂餐</item>
+    </string-array>
+
+    <string-array name="c0201_txtWhichStore">
+        <item>某某店1</item>
+        <item>某某店2</item>
+    </string-array>
+
+    <string name="c0201_orderDiscription">描述</string>
+    <string name="c0201_txtStart">開始點餐</string>
+    <string name="c0201_imgOrederSetting" >點餐設定圖片</string>
+    <string name="c0201_txtOrderSetting1">點餐設定文字1</string>
+    <string name="c0201_txtOrderSetting2">點餐設定文字2</string>
+    <string name="c0201_btnDlgConfirm">確認</string>
+    <string name="c0201_btnDlgCancel">取消</string>
+
+    <string name="c0201_timeTitle">選擇取餐時間</string>
+    <string name="c0201_timeMessage">請提前20分鐘以上下訂</string>
+
+</resources>

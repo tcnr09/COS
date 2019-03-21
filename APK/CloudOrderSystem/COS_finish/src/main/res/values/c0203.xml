@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c0203_txt001">容量</string>
+    <string name="c0203_txt002">數量(杯)</string>
+    <string name="c0203_txt003">甜度</string>
+    <string name="c0203_txt004">溫度</string>
+    <string name="c0203_txtRadioB_Sweet01">正常糖</string>
+    <string name="c0203_txtRadioB_Sweet02">少糖</string>
+    <string name="c0203_txtRadioB_Sweet03">半糖</string>
+    <string name="c0203_txtRadioB_Sweet04">微糖</string>
+    <string name="c0203_txtRadioB_Sweet05">無糖</string>
+    <string name="c0203_txtRadioB_IceLevel01">正常冰</string>
+    <string name="c0203_txtRadioB_IceLevel02">少冰</string>
+    <string name="c0203_txtRadioB_IceLevel03">微冰</string>
+    <string name="c0203_txtRadioB_IceLevel04">去冰</string>
+    <string name="c0203_txtRadioB_IceLevel05">熱的</string>
+    <string name="c0203_txtRadioB_SizeSmall">Small</string>
+    <string name="c0203_txtRadioB_SizeLarge">Large</string>
+    <string name="c0203_btnNext">加入購物車</string>
+</resources>

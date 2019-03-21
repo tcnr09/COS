@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="c0401_r001">儲值紀錄</string>
+    <string name="c0401_r002">交易紀錄</string>
+    <string name="c0401_r003">紀錄說明</string>
+    <string name="c0401_t001">設定:</string>
+    <string name="c0401_datetitle">日期:</string>
+    <string name="c0401_datemessage">請選擇適合您的日期</string>
+    <string name="c0401_timetitle">時間:</string>
+    <string name="c0401_timemessage">請選擇適合您的時間</string>
+    <string name="n_yy">年</string>
+    <string name="n_mm">月</string>
+    <string name="n_dd">日</string>
+    <string name="d_hh">時</string>
+    <string name="d_mm">分</string>
+    <string name="c0401_telhint">例如 : 0911111111</string>
+    <string name="count_t">共計:</string>
+    <string name="tvIdTitle">顯示資料</string>
+    <string name="c0401_tel">電話號碼:</string>
+    <string name="ivContDesc">照片</string>
+</resources>

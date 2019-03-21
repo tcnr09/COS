@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c0301_txt01">目前點數</string>
+    <string name="c0301_txt03">優惠資訊</string>
+    <string name="c0302_textView">開始日期</string>
+    <string name="c0302_textView2">結束日期</string>
+    <string name="c0302_search">開始查詢</string>
+    <string name="按此選擇日期" />
+    <string name="datepic">按此選擇日期</string>
+</resources>

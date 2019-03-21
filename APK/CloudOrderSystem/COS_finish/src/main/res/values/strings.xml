@@ -1,0 +1,31 @@
+<resources>
+    <!--c04-->
+    <string name="app_name">雲端-訂餐系統</string>
+    <string name="action_settings">結束</string>
+    <string name="c0401_cos01">點餐</string>
+    <string name="c0401_cos02">會員登入</string>
+    <string name="c0401_cos03">cos卡</string>
+    <string name="c0401_cos04">紀錄</string>
+    <string name="c0401_cos05">重要訊息</string>
+    <string name="c0401_cos06">關於我們</string>
+    <!-- c03-->
+    <string name="title_home">首頁</string>
+    <string name="title_point">點數</string>
+    <string name="title_record">紀錄</string>
+    <!--c05-->
+    <string name="c0501_txt01">粉絲團</string>
+    <string name="c0501_txt02">意見回饋</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <!--c02-->
+    <string name="menu_item01">點餐</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="cos_order">點餐</string>
+    <string name="cos_member">會員</string>
+    <string name="cos_card">COS卡</string>
+    <string name="cos_record">交易紀錄</string>
+    <string name="cos_park">停車資訊</string>
+    <string name="cos_about">關於我們</string>
+    <string name="todo">TODO</string>
+
+</resources>

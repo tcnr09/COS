@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="maps">地圖資訊</string>
+    <string name="mysql">資料庫</string>
+</resources>
