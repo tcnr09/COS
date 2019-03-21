@@ -1,0 +1,103 @@
+
+	.logo {
+		width: 300px;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: auto;
+		margin-left: auto;
+
+	}
+	#logo_img{
+		box-shadow: 10px 10px 50px 10px #bbb;
+		border-radius:150px;
+		 
+	}
+	.pimg{
+		width: 50%;			
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: auto;
+		margin-left: auto;
+		/*margin: 0 auto 0 auto ; */
+		/*up left down right*/
+
+
+		/*border-radius: 150px;*/
+		/*給圖片陰影 有五個參數 x坐標(正值為陰影向右平移x) y坐標(正值向下平移y) 渲染程度 寬度 陰影顔色*/
+		
+		
+	}
+
+	.pimg2{
+		width: 50%;			
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: auto;
+		margin-left: auto;
+		box-shadow: 10px 10px 50px 10px #bbb;
+		border-radius: 50%;
+		/*給圖片陰影 有五個參數 x坐標(正值為陰影向右平移x) y坐標(正值向下平移y) 渲染程度 寬度 陰影顔色*/
+					
+	}
+
+	.pimg2 img{
+		width: 100%;
+		border-radius: 50%;
+	}
+	.ptext2 p{
+		color: #F4B035;
+		font-size: 32px;
+		text-align: center;
+	}
+	.ptext{
+		color: #F4B035;
+		font-size: 32px;
+
+	}
+	.pabout h1{
+		color: #13C283;
+		font-size: 45px;
+	}
+	.pimg img{
+		/*box-shadow:20px 10px 50px 2px #aaa; 
+		border-radius: 100px;*/
+		width: 100%;
+		height: 100%;
+		box-shadow: 10px 10px 50px 10px #bbb;
+		border-radius:25%;
+	}
+
+	#grad {
+		/*
+			提示：17 种标准色 : 
+			aqua, black, blue, fuchsia, 
+			gray, green, lime, maroon, 
+			navy, olive, orange, purple, 
+			red, silver, teal, white, yellow。
+		*/
+		height: 50px;
+		color: white;
+		/*background: linear-gradient(to bottom right, red ,green, blue); */
+		background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+	}
+
+	#message {
+		/*
+			提示：17 种标准色 : 
+			aqua, black, blue, fuchsia, 
+			gray, green, lime, maroon, 
+			navy, olive, orange, purple, 
+			red, silver, teal, white, yellow。
+		*/
+		font-size: 20px;
+		color: white;
+		/*background: linear-gradient(to bottom right, red ,green, blue); */
+		background: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+	}
+	.div2 {
+	    /*background-color: lightgrey;*/
+	    width: 300px;
+	    border: 5px solid lightgrey;
+	    padding: 25px;
+    	margin: 25px;
+	}

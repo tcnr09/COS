@@ -1,7 +1,7 @@
 $(function(){
 	$.ajax({
 		type:"GET",
-		url:"http://localhost/MyWeb/php/get_foodopendata.php",
+		url:"http://192.168.60.109/COS_WebSite/php/get_foodopendata.php",
 		dataType:"json",
 		success:showFoodMap,
 		error:function(){

@@ -1,7 +1,7 @@
 $(function(){
     $.ajax({
         type:"GET",
-        url:"http://localhost/ChartDemo/php/get_chart.php",      
+        url:"http://192.168.60.109/COS_WebSite/php/get_chart.php",      
         dataType:"json",
         success:show,
         error:function(){
@@ -40,12 +40,12 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
         // labels: ["January", "February", "March", "April", "May", "June", "July"],
-        labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
+        labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
         datasets: [{
-            label: "My First dataset",
+            label: "消費紀錄",
             backgroundColor: 'rgb(173,255,47)',
             borderColor: 'rgb(255,0,255)',
-            data: [5, 10, 15, 20, 25, 30, 35],
+            data: [55, 60, 35, 30, 35, 30, 55,80,45,30,35,40],
         }]
     },
 

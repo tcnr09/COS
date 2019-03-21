@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COS Record</title>
+
+	<!-- My style themes 20190223 by Castle -->
+    <!-- http://themeroller.jquerymobile.com -->
+    <link rel="stylesheet" href="themes/mystyle.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- MyCSS -->
+    <link rel="stylesheet" href="css/mycss-v1.css" />
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+		 function getnowtime() {//取得當前時間
+            var nowtime = new Date();
+            var year = nowtime.getFullYear();
+            var month = (nowtime.getMonth() + 1);
+            var day = nowtime.getDate();
+            // var hour = nowtime.getHours();
+            // var minute = nowtime.getMinutes();
+            // var second = nowtime.getSeconds();
+            return year + "-" + month + "-" + day ;
+        }
+
+
+		$(function (){
+			$.ajax({
+				type:"GET",
+				url:"https://tcnr1620.000webhostapp.com/test/Cloudrecord.php",
+				dataType:"json",
+				success:show,
+				error:function(){
+					alert("資料錯誤!");
+				}
+			});		
+		});
+		function show(data){
+			$("#ok_btn_rec").bind("click",showrecord);
+  			function showrecord(){
+				$("#outputrec").empty();//清空
+				$("#outputsave").empty();//清空
+				for(var i=0;i<data.length;i++){
+					if($("#telrec").val()==data[i].Tel){
+	  					recstrHTML='<h3>交易紀錄</h3><p>付款日期:'+data[i].Date+'</p><p>付款項目:'+data[i].Item+'</p><p>付款金額:'+data[i].Price+'</p>';
+	  					$("#outputrec").append(recstrHTML);
+	  				}//end if		
+	  			}//end(for i)
+  			}//end function showrecord
+
+  			$("#ok_btn_save").bind("click",showsave);
+  			function showsave(){
+  				$("#outputrec").empty();//清空
+				$("#outputsave").empty();//清空
+				for(var i=0;i<data.length;i++){
+					if($("#telsave").val()==data[i].Tel){
+	  					savestrHTML='<h3>儲值紀錄</h3><p>儲值日期:'+data[i].Date+'</p><p>儲值金額:'+data[i].Price+'</p>';
+	  					$("#outputsave").append(savestrHTML);
+	  				}//end if	
+	  			}//end(for i)
+  			}//end function showsave
+		}//end function show
+	</script>
+
+	<style>
+	#canvas-holder {
+		width: 100%;
+		margin-top: 50px;
+		text-align: center;
+	}
+	#chartjs-tooltip {
+		opacity: 1;
+		position: absolute;
+		background: rgba(0, 0, 0, .7);
+		color: white;
+		border-radius: 3px;
+		-webkit-transition: all .1s ease;
+		transition: all .1s ease;
+		pointer-events: none;
+		-webkit-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+	}
+
+	.chartjs-tooltip-key {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin-right: 10px;
+	}
+	</style>
+</head>
+<body>
+	<!-- deposit -->
+	<div data-role="page" id="deposit" >
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>儲值紀錄</h1>
+			<a href="COS_index.html" rel="external" class="ui-btn-left" data-icon="cloud"  style="background: #3fa654">
+				COS
+			</a>
+		</div>
+		<div data-role="main" class="ui-content" >	
+			<div data-role="navbar" data-grid="a">
+				<ul>
+					<li><a href="#deposit" class="ui-btn-active">儲值紀錄</a></li>
+					<li><a href="#transaction">交易紀錄</a></li>
+				</ul>			
+			</div>	
+
+			<div data-role="fieldcontain">
+				<label for="telsave">電話號碼:{例如(0911111111)}</label>
+				<input type="text" name="telsave" id="telsave" value="" />
+			</div>
+			<div>
+				<a href="#" data-role="button" data-theme="b" id="ok_btn_save">查詢</a>
+			</div>	
+			<div id="outputsave" style="background-color: yellow"></div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h1>COS</h1>
+		</div>
+	</div>
+
+	<!-- transaction -->
+	<div data-role="page" id="transaction" >
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<a href="COS_index.html" rel="external" class="ui-btn-left" data-icon="cloud"  style="background: #3fa654">
+				COS
+			</a>
+			<h1>交易紀錄</h1>
+		</div>
+		<div data-role="main" class="ui-content" >	
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#deposit">儲值紀錄</a></li>
+					<li><a href="#transaction" class="ui-btn-active">交易紀錄</a></li>
+				</ul>			
+			</div>
+
+			<div data-role="fieldcontain">
+				<label for="telrec">電話號碼:{例如(0911111111)}</label>
+				<input type="text" name="telrec" id="telrec" value="" />
+			</div>
+
+			<div>
+				<a href="#" data-role="button" data-theme="b" id="ok_btn_rec">查詢</a>			
+			</div>
+
+	
+			<div id="outputrec" style="background-color: yellow"></div>
+
+			<hr>			
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h1>COS</h1>
+		</div>
+	</div>
+
+	
+
+
+</body>
+</html>

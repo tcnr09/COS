@@ -13,16 +13,12 @@
 	}
 
 	function execute_sql($link,$dbname,$sql){
-		mysqli_select_db($link,$dbname)
-		or die("Can't link DB".mysqli_error($link));
+		mysqli_select_db($link,$dbname) or die("Can't link DB ".mysqli_error($link));
 
 		$result = mysqli_query($link,$sql);
 
 		return $result;
 	}
-
-
-
 
 ?>
 

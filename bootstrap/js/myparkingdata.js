@@ -2,7 +2,7 @@ $(function(){
 
 	$.ajax({
 		type:"GET",
-		url:"http://localhost/MyWeb/php/get_parkingopendata.php",
+		url:"http://192.168.60.109/COS_WebSite/php/get_parkingopendata.php",
 		dataType:"json",
 		success:outsideParking,
 		error:function(){

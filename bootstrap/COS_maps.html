@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8"/>
+	<!-- For Mobile monitor -->
+	<meta name="viewport" content="width = device-width , initial-scale = 1">
+
+	<title>Google Maps</title>
+
+	<!-- My style themes 20181215 by Castle -->
+	<!-- http://themeroller.jquerymobile.com -->
+	<link rel="stylesheet" href="themes/mystyle.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+	<!-- Google Map 20190124 author PJ-->
+	<!-- Google Map CSS-->
+	<link rel="stylesheet" href="css/mycss.css">
+	
+	<!-- Jquery mobile import file CSS-->
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	
+	<!-- Jquery mobile import file JS -->
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<!-- Google Map key=AIzaSyCSnyMTQAIeclcmF-1y1ufEj3mzZb6sPx4 -->
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABQoU14cPrg7gJzj4RgIEQtmsHhkzHVsc" type="text/javascript"></script>
+
+	<!-- My Gmap JS 20190124 author PJ-->	
+	<script src="js/myjs-gmap.js"></script>
+
+	<!-- User define Travel map data  20190124 author PJ-->
+	<script src="js/mytraveldata.js"></script>
+
+	<!-- Open data Food map  20190128 author PJ-->
+	<script src="js/myfooddata.js"></script>
+
+	<!-- Open data Parking map 20190129 author PJ -->
+	<script src="js/myparkingdata.js"></script>
+	
+
+	<!-- My Hotel JS 20190208-->
+	<!-- <script src="js/mytp-hotel.js"></script> -->
+
+	
+
+</head>
+
+<body>
+
+	<!-- Home Page Content -->
+	<div data-role = "page" id ="home" align="center" data-theme="c" data-fullscreen="true" >
+
+		
+		<!-- Header -->
+		<div data-role="header" >
+			
+			<h1>My Food-Maps : </h1>
+			
+			<a href="#" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" style="background: #3fa654" data-transition="turn" >
+				Back
+			</a>
+			
+			<a href="COS_index.html" rel="external" class="ui-btn-right" data-icon="cloud"  style="background: #3fa654">
+				COS
+			</a>
+
+		</div>
+		<!-- FIN Header -->
+		
+		<!-- Content -->
+		<div data-role="main" class="ui-content">
+
+			<!-- data-inset 	true | false 	规定可折叠按钮是否渲染成圆角且带外边距 -->
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">Attrations</li>
+				<li>
+					<a href="javascript:GetGeo(24.170566,120.609932)">CVTC</a>
+				</li>
+				<li>
+					<a href="javascript:GetGeo(25.033773,121.564787)">Taipei 101</a>
+				</li>
+				<li>
+					<a href="javascript:GetGeo(25.102398,121.548613)">National Palace Museum</a>
+				</li>
+				<li>
+					<a href="javascript:GetGeo(23.84932,120.929622)">Sun moon lake</a>
+				</li>
+				<li>
+					<a href="javascript:GetGeo(21.949812,120.779816)">Kenting National Park</a>
+					
+				</li>
+			</ul>
+			<hr>
+
+			
+			<!-- Gmap user define and opendata -->
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><a href="#travel" class="ui-btn">TW Travel</a></div>
+
+				<div class="ui-block-b"><a href="#foodpage" class="ui-btn">OpenDB Food</a></div>
+				
+				<div class="ui-block-c"><a href="#parkingpage" class="ui-btn">OpenDB Parking</a></div>
+			</div>
+			
+			<!-- <a href="#mypopup" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline"><img src="images/myicon/webi.png" width="50%"></a>
+			<a href="#hotelpage" class="ui-btn ui-btn-inline">Taipei Hotel</a>
+			<a href="#" class="ui-btn ui-btn-inline">Button 3(ui-btn-inline)</a> -->
+			
+			<br><br><br><hr>
+			
+			<!-- popup page -->
+			<div data-role="popup" id="mypopup" data-dismissible="false">
+				<a href="#"  class="ui-btn ui-btn-right ui-icon-delete" data-position="notext" data-rel="back">
+					Close
+				</a>
+			
+				<img src="images/myicon/webi.png" >
+					
+				<p>
+					Description : changePage
+				</p>
+				<div>
+					
+					jQuery.mobile.changePage( to [, options ] )参数解释说明：<br>
+
+					to：字符串类型或Object类型，将要跳转到的目的页面。<br><hr>
+
+					options：可选参数，Object类型。其对象内的属性解释如下：<br>
+					allowSamePageTransition：布尔类型，默认为false。默认情况下，changepage()忽略请求改变当前的活动页面。设置为true，允许请求执行。注意的一些页面转换到另一个页面(changepage请求的页和页是不同的)，他们可能不会如预期的动画。<br>
+					changeHash:布尔类型，默认为true。设置为true时地址栏中的Hash更新会创建一个新的浏览器历史记录的影响。设置为false，传入的页面在浏览器历史替换当前页面，用户导航无法通过浏览器的“后退”按钮回到上一个页面。<br>
+					data：Object类型或字符串类型，默认为 undefined。跳转页面发送ajax请求的参数。<br>
+					dataUrl：字符串类型，默认为 undefined。完成页面转换时要更新浏览器地址的URL地址。如不特别指定，则使用页面page元素的data-url属性值。<br>
+					pageContainer：（jQuery选择器，默认：$.mobile.pageContainer)指定应该包含页面的容器。<br>
+					reloadPage：布尔类型，默认false。强制刷新页面, 即使当页面容器中的dom元素已经准备好时，也强制刷新。只在changePage()的to参数是一个可用地址的时候。<br>
+					reverse：布尔类型，默认false。设定页面转场动画的方向，设置为true时将导致反方向的转场。<br>
+					role：字符串类型，默认为 undefined。显示页面的时候使用data-role值。默认情况下此参数为认：undefined，取决于元素的@data-role属性。<br>
+					showLoadMsg：布尔类型，默认true。设定加载外部页面时是否显示loading信息。<br>
+					transition：字符串类型，默认为 $.mobile.defaultPageTransition。过渡到其他页面时呈现。<br>
+					type:字符串类型，默认为get。只有到to的参数被指定时使用。<br><br><br><hr>
+					
+					使用例子如下：添加changehash：假以避免iframe引起的问题。<br>
+					$.mobile.changePage( "../resources/us.html", { <br>
+						transition: "slideup", <br>
+		    			changeHash: false <br>
+		    		});<br>
+		    		$.mobile.changePage( "../resources/results.php", {<br>
+		      			type: "post",<br>
+		      			data: $( "form#search" ).serialize(),<br>
+		      			changeHash: false <br>	
+		    		});<br>
+		    		$.mobile.changePage( "../resources/confirm.html", {<br>
+		      			transition: "pop",<br>
+		      			reverse: false, <br>
+		      			changeHash: false <br>	
+		    		});<br><hr>
+
+		    		//以slideup效果 跳转到 "about us" 页面<br>
+		    		$.mobile.changePage("about/us.html", "slideup");<br>
+		     
+		    		//以pop效果 跳转到 "confirm" 页面 并且在url hash里不记录其历史<br>
+		    		$.mobile.changePage("../alerts/confirm.html"， "pop"， false， false); <br>
+		     
+		     
+		    		//跳转到 "search results" 页面，提交id为 "search"的表单数据<br>
+		    		$.mobile.changePage({url:"searchresults.php" , type:"get" , data: $("form#search").serialize() }); <br>
+		     
+		     
+		    		//将页面url，类型，数据定义为变量来传递。<br>
+		    		$.mobile.changePage({ url: formresults.php, type: 'get', data:$('form#myform').serialize () });<br>
+		     
+		     
+		    		//使用changepage来加载第三个页面<br>
+		    		$.mobile.changePage([$.mobile.activePage.data ('ui.prevPage'), anotherPreviousPage], 'pop');<br>
+
+				</div>
+				
+			</div>	
+			
+	
+		</div>
+		<!-- FIN Content -->
+
+
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			
+			<h1>
+			2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			-->
+			
+			<!-- 
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="turn"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "flip"></a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		<!-- FIN Footer -->
+
+	</div>
+	
+	<!-- Gmap ListView Page Comment -->
+	<div data-role="page" id ="map" align="center" data-theme="c" data-fullscreen="true" >
+
+		<!-- header -->
+		<div data-role="header" >
+			
+			<h1>G Map</h1>
+			
+			<a href="#" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" style="background: #3fa654" data-transition="turn" >
+				Back
+			</a>
+			
+			<a href="#" data-rel="external" class="ui-btn-right" data-icon="arrow-r"  style="background: #3fa654">
+				Next
+			</a>
+
+		</div>
+		
+		<!-- Content -->
+		<div data-role="main" class="ui-content">
+
+			<div class="gmap" id ="gmap"></div>
+
+		</div>
+
+
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			
+			<h1>
+			2019 Copyright Notice <br>					
+			</h1>
+
+			<div data-role="button" class="ui-bar" align="center">
+				<div data-role="navbar">
+					<ul>
+						<li>
+
+							<a href="#home" class="ui-btn ui-btn-icon-top ui-icon-home" data-transition="turn"></a>
+						</li>
+						<li>
+							<a href="#map" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-gear" data-transition = "flip"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Gmap TW Travel Page Comment -->
+	<div data-role="page" id="travel" align="center" data-theme="c" data-fullscreen="true">
+		<!-- header -->
+		<div data-role="header" data-position="fixed">
+			<h1>TW Travel</h1>
+		</div>
+
+		<!-- Content -->
+		<div role="main" class="ui-content" >
+
+			<div class="travel_gmap" id ="mytravel"></div>
+			
+		</div>
+		
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+			2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			-->
+			
+			<!-- 
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="turn"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "flip"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Gmap TW Food Page Comment -->
+	<div data-role="page" id="foodpage" align="center" data-theme="c" data-fullscreen="true">
+		
+		<!-- Header -->
+		<div data-role="header" data-position="fixed">
+			<h1>TW Food</h1>
+		</div>
+
+		<!-- Content -->
+		<div role="main" class="ui-content" >
+			
+			<div class="myfood_gmap" id ="myfood"></div>
+			
+		</div>
+
+		<!-- Footer	 -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+				2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="turn"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "flip"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>	
+
+	<!-- Gmap TW Parking of Car Page Comment -->
+	<div data-role="page" id="parkingpage" align="center" data-theme="c" data-fullscreen="true">
+		
+		<!-- Header -->
+		<div data-role="header" data-position="fixed">
+			<h1>TW Parking</h1>
+		</div>
+
+		<!-- Content -->
+		<div role="main" class="ui-content" >
+			
+			<div class="mycar_div" id ="mypark"></div>
+			
+		</div>
+
+		<!-- Footer	 -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+				2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="slideup"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "pop"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>	
+
+	<!-- Gmap Taipei Hotel of Car Page Comment -->
+	<div data-role="page" id="hotelpage" align="center" data-theme="c" data-fullscreen="true">
+		
+		<!-- Header -->
+		<div data-role="header" data-position="fixed">
+			<h1>Taipei Hotel Region</h1>
+			
+			<a href="#" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" style="background: #3fa654" data-transition="turn" >
+				Back
+			</a>
+
+				<!-- JavaScript自动刷新页面的方法 -->
+			<a href="javascript:location.reload(true)" class="ui-btn-right" data-icon="recycle" data-iconpos="notext" style="background: #3fa654" data-transition="flow" >
+				Rsfresh
+			</a>
+
+		</div>
+
+		<!-- Content -->
+		<div role="main" class="ui-content" >
+			
+			<!-- <div class="myhotel_div" id ="myhotel"></div> -->
+
+			<img src="http://fakeimg.pl/350x200/00CED1/FFF/?text=TaipeiHotel">
+
+			<!-- data-inset 	true | false 	规定可折叠按钮是否渲染成圆角且带外边距 -->
+			<ul data-role="listview" data-inset="true" id="list_region" data-filter="true" data-filter-placeholder="Serch code">
+				<li data-icon="location">
+					<a href="#hotel_list">
+						<img src="http://www.runoob.com/try/demo_source/chrome.png" >						
+						<h2>Google Chrome</h2>
+						<p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
+						<span class="ui-li-count ">12 </span>
+					</a>
+					<a href="#hotel_gmap">
+						
+					</a>										
+				
+				</li>			
+				
+			</ul>
+			
+		</div>
+
+		<!-- Footer	 -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+				2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="slidedown"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "pop"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>	
+
+	<!-- Gmap TW Hotel Page Comment -->
+	<div data-role = "page" align="center" id = "hotel_list" data-theme="c" data-fullscreen="true">
+
+		<!-- Header -->
+		<div data-role = "header" data-position="fixed">
+			<h1 id="list_head">Hotel List</h1>
+			
+			<a href="javascript:Refresh()" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" style="background: #3fa654" data-transition="turn" >
+				Back
+			</a>
+
+		
+
+		</div>
+
+		<!-- Content -->
+		<div data-role = "main" class="ui-content">
+
+			<img src="images/myicon/hp2.png">
+
+			<!-- data-inset 	true | false 	规定可折叠按钮是否渲染成圆角且带外边距 -->
+			<ul data-role="listview" data-inset="true"  id="level2" data-filter="true" data-filter-placeholder="Serch code">
+				
+				<li data-icon=="arrow-r">
+					<a href="#hotel_gmap">
+						<img src="http://www.runoob.com/try/demo_source/gb.png" alt="Great Britain" class="ui-li-icon">
+						Region
+					</a>
+					<span class="ui-li-count ">88</span>
+				</li>
+				
+			</ul>			
+
+		</div>
+
+		<!-- Footer	 -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+				2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="flow"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "pop"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Gmap TW Hotel Page Comment -->
+	<div data-role = "page" align="center" id = "hotel_gmap" data-theme="c" data-fullscreen="true">
+
+		<!-- Header -->
+		<div data-role = "header" data-position="fixed">
+			<h1>Hotel GMap</h1>
+
+			<a href="#" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" style="background: #3fa654" data-transition="turn" >
+				Back
+			</a>
+
+		</div>
+
+		<!-- Content -->
+		<div data-role = "main" class="ui-content">
+
+			<div class="myhotel_gmap" id ="myhotel"></div>
+
+		</div>
+
+		<!-- Footer	 -->
+		<div data-role="footer" data-position="fixed">
+
+			<h1>
+				2019 Copyright Notice <br>					
+			</h1>
+
+			<!-- 
+				data-transition = [parameter] 	
+				fade | flip | flow | pop | slide | slidedown | slidefade | slideup | turn | none 
+			
+				对于多个页面，您可能想要每个按钮的选中外观代表当前用户所在的页面。要做到这一点，请添加 "ui-state-persist" 和 "ui-btn-active" 到链接的 class： 
+			-->
+			<div data-role="navbar">
+				<ul>
+					<li>
+
+						<a href="#home" class="ui-btn ui-btn-icon-top ui-state-persist ui-btn-active ui-icon-home" data-transition="flow"></a>
+					</li>
+					<li>
+						<a href="#map" class="ui-btn ui-btn-icon-top ui-icon-gear" data-transition = "pop"></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>	
+	
+	
+</body>
+</html>
+

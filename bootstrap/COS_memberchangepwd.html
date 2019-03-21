@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+		$(function(){
+			// 登入
+			$("#login_ok").bind("click", function(){
+				$.ajax({
+					type: "POST",
+					url: "https://tcnr1620.000webhostapp.com/test/memberAPI/member-CURD-api.php",
+					data: {selefunc_string:"query",username: $("#username").val(), password: $("#password").val()},
+					success: login,
+					error:function(){
+						alert("登入失敗");
+					}
+				});
+			});	
+			// 更改密碼
+			$("#change_pwd").bind("click", function(){
+				$.ajax({
+					type: "POST",
+					url: "https://tcnr1620.000webhostapp.com/test/memberAPI/member-CURD-api.php",
+					data: {selefunc_string:"update",username: $("#username").val(), password: $("#password_chg").val()},
+					success: changepwdsuccesss,
+					error:function(){
+						alert("更改失敗");
+					}
+				});
+			});
+		});
+
+		function login(data){
+			// alert(data);
+			if(data==1){
+				$("#login_ok").bind("click", function(){
+					$("#login_ok").attr("href","#changepwd");
+				});		
+			}					
+		}
+		function changepwdsuccesss(data){
+			location.href="COS_index.html";
+			// $("#change_pwd").bind("click", function(){
+				// $("#change_pwd").attr("href","http://192.168.60.109/COS_WebSite/COS_index.html");
+			// });		
+			alert("更改成功");	
+		}
+	</script>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<div data-role="header" data-position="fixed" id="home" data-theme="b">
+			<h1>更改密碼</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div data-role="fieldcontain">
+				<label for="username">帳號</label>
+				<input type="text" name="username" id="username" value="aabbcc">
+			</div>
+			<div data-role="fieldcontain">
+				<label for="password">密碼</label>
+				<input type="password" name="password" id="password">
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="#" data-role="button" data-theme="b" data-rel="back">取消</a>		
+				</div>
+				<div class="ui-block-b">
+					<a href="#" data-role="button" data-theme="b" id="login_ok">登入</a>	
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>footer</h1>
+		</div>
+	</div>
+	<div data-role="page" id="changepwd">
+		<div data-role="header" data-position="fixed" id="home" data-theme="b">
+			<h1>會員登入</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div data-role="fieldcontain">
+				<label for="password_chg">更改密碼</label>
+				<input type="password" name="password_chg" id="password_chg">
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="#" data-role="button" data-theme="b" data-rel="back">取消</a>		
+				</div>
+				<div class="ui-block-b">
+					<a href="#" data-role="button" data-theme="b" id="change_pwd">更改</a>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>footer</h1>
+		</div>
+	</div>
+</body>
+</html>		

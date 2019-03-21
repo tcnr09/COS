@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+		$(function(){
+
+			$("#reg_ok").bind("click", function(){
+				$.ajax({
+					type: "POST",
+					url: "http://192.168.60.109/COS_WebSite/php/COS_opinion.api.php",
+					data: {radio1: $('input:radio:checked[name="radio1"]').val(), radio2: $('input:radio:checked[name="radio2"]').val(), radio3: $('input:radio:checked[name="radio3"]').val(), advise: $("#advise").val() },
+					success: reg,
+					error:function(){
+						alert("註冊api回傳失敗");
+					}
+				}); // end ajax
+			});
+		}); // end function()
+
+
+		function reg(data){
+			if(data == 1){
+				location.href="COS_opinion-success.html";
+			}else{
+				alert(data);
+			}
+		}
+
+
+
+	</script>
+</head>
+
+<form action="">
+
+<body>
+	<div data-role="page" id="home">
+		<div data-role="header" data-position="fixed" id="home" data-theme="b">
+			<h1>意見回饋</h1>
+			<a href="#" data-theme="b" data-rel="back" data-icon="back"><FONT size="3">Back</FONT></a>	
+		</div>
+		<div role="main" class="ui-content">
+
+		<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+			<legend>整潔度:</legend>
+
+			<input type="radio" name="radio1" id="radio1_1" value="1" />
+			<label for="radio1_1">1</label>
+			<input type="radio" name="radio1" id="radio1_2" value="2" />
+			<label for="radio1_2">2</label>
+			<input type="radio" name="radio1" id="radio1_3" value="3" />
+			<label for="radio1_3">3</label>
+			<input type="radio" name="radio1" id="radio1_4" value="4" />
+			<label for="radio1_4">4</label>
+			<input type="radio" name="radio1" id="radio1_5" value="5" checked/>
+			<label for="radio1_5">5</label>																	
+		</fieldset>
+		</div>	
+
+		<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+			<legend>服務態度:</legend>
+
+			<input type="radio" name="radio2" id="radio2_1" value="1" />
+			<label for="radio2_1">1</label>
+			<input type="radio" name="radio2" id="radio2_2" value="2" />
+			<label for="radio2_2">2</label>
+			<input type="radio" name="radio2" id="radio2_3" value="3" />
+			<label for="radio2_3">3</label>
+			<input type="radio" name="radio2" id="radio2_4" value="4" />
+			<label for="radio2_4">4</label>
+			<input type="radio" name="radio2" id="radio2_5" value="5" checked/>
+			<label for="radio2_5">5</label>																	
+		</fieldset>
+		</div>
+
+		<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+			<legend>餐飲滿意度:</legend>
+
+			<input type="radio" name="radio3" id="radio3_1" value="1" />
+			<label for="radio3_1">1</label>
+			<input type="radio" name="radio3" id="radio3_2" value="2" />
+			<label for="radio3_2">2</label>
+			<input type="radio" name="radio3" id="radio3_3" value="3" />
+			<label for="radio3_3">3</label>
+			<input type="radio" name="radio3" id="radio3_4" value="4" />
+			<label for="radio3_4">4</label>
+			<input type="radio" name="radio3" id="radio3_5" value="5" checked/>
+			<label for="radio3_5">5</label>																	
+		</fieldset>
+		</div>
+
+		<div data-role="fieldcontain">
+			<label for="advise">其他意見</label>
+				<textarea name="advise" id="advise" cols="100" rows="10" wrap="hard"></textarea>
+		</div>
+			
+
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<input id="Reset1" type="reset" value="重寫" data-theme="b" onclick="form.reset()" />
+				</div>
+				<div class="ui-block-b">
+					<a href="#" data-role="button" data-theme="b" id="reg_ok">送出</a>		
+				</div>
+			</div>
+
+
+
+		</div>
+<!-- 		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>footer</h1>
+		</div> -->
+	</div>
+</body>
+
+</form>
+
+</html>		

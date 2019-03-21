@@ -1,0 +1,13 @@
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+if (is_home() == true) {
+$pagetitle = "Home";
+}
+else {
+$pagetitle = wp_title('', false);
+}
+define("_BBC_PAGE_NAME","db".$pagetitle);
+define("_BBCLONE_DIR", "../bbclone/");
+define("COUNTER", _BBCLONE_DIR."mark_page.php");
+if (is_readable(COUNTER)) { include_once(COUNTER); }
+else { echo "Counter is broken."; }
