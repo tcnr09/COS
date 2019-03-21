@@ -6,7 +6,7 @@ $(function(){
         dataType:"json",
         success:show,
         error:function(){
-            alert("error Chart Get");
+            alert("error Get Pie Chart");
         }
     });
 
