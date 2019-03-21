@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 07 Template</title>
+
+    <!-- My style themes 20190223 by Castle -->
+    <!-- http://themeroller.jquerymobile.com -->
+    <!-- <link rel="stylesheet" href="themes/mystyle.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /> -->
+
+    <!-- Bootstrap CSS-->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- JQUERY MOBILE CSS -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- MyCSS -->
+    <link rel="stylesheet" href="css/mycss.css" />
+   
+   
+
+  </head>
+  <body>
+    <div class="container">
+    	<!-- Bootstrap 表格 http://www.runoob.com/bootstrap/bootstrap-tables.html-->
+    	<div class="row" style="text-align: center;">
+    		<div class="col-sm-8 col-sm-offset-2" >
+    			<!-- 
+    				table-hover: 滑入效果 
+    				table-striped : 條紋行 
+    				table-condensed : 讓表格變緊湊(每一列少6像素) 
+    				table-bordered: 框線 -->
+
+    			<table class="table table-bordered table-hover table-condensed table-striped table-rwd">
+	    			<thead>
+		    			<tr id="head">
+		    				<th class="mytxt">編號</th>
+		    				<th class="mytxt">品名</th>
+		    				<th class="mytxt">價格</th>
+		    				<th class="mytxt">備註</th>
+		    				<th class="mytxt">date</th>
+		    			</tr>
+	    			</thead>
+	    			
+	    			<tbody id="my_tb">
+	    				<!-- 視覺警示效果 success、info、warning、active、danger -->
+	    				<tr class="success">
+	    					<td data-th="ID : "><span class="table-col">001</span> </td>
+	    					<td data-th="Name : "><span class="table-col">椅子</span></td>
+	    					<td data-th="Addr : "><span class="table-col">19</span></td>
+	    					<td data-th="Money : "><span class="table-col">創新鎖定三大接着對他</span></td>
+	    					<td></td>
+	    				</tr>
+	    				<tr class="info">
+	    					<td>002</td>
+	    					<td>桌子</td>
+	    					<td>299</td>
+	    					<td>抓住在線複雜身後當然</td>
+	    					<td></td>
+	    				</tr>
+	    				<tr class="danger">
+	    					<td>003</td>
+	    					<td>梯子</td>
+	    					<td>199</td>
+	    					<td>出來或是哪個人事天天</td>
+	    					<td></td>
+	    				</tr>
+	    			</tbody>
+	    		
+	    		</table>
+    		</div>
+    		
+    		
+    	</div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- JQUERY MOBILE CSS -->
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+    <!-- MyJS -->
+    <script src="js/my_bs07.js"></script>
+    <!-- <script src="js/demoajax.js"></script> -->
+
+
+  </body>
+</html>

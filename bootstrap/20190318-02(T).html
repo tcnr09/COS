@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+    	body{
+    		font-family: Microsoft JhengHei;
+    	}
+    	h1, h2, h3, h4, h5, h6{
+    		font-weight: bold;
+    	}
+    	.bg-cover{
+    		background-repeat: no-repeat;
+    		background-position: center center;
+    		-webkit-background-size: cover;
+    		background-size: cover;
+    	}
+    	.carousel-caption{
+    		background-color: rgba(0,0,0,0.4);
+    		font-size: 14px;
+    		padding: 15px;
+    	}
+    	@media screen and (max-width: 768px){
+    		.my-text-white{
+    			color: white;
+    		}
+    	}
+    </style>
+  </head>
+  <body>
+
+<div class="bg-secondary text-right">
+	<div class="container">
+		<i class="fab fa-facebook text-white mr-1"></i>
+		<i class="fab fa-twitter-square  text-white mr-1"></i>
+		<i class="fab fa-instagram  text-white"></i>    	
+	</div>
+</div>
+
+
+<section class="bg-dark">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#"><i class="fas fa-air-freshener"></i></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">關於我們 <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          餐點種類
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" href="#">Another action</a>
+		          <div class="dropdown-divider"></div>
+		          <a class="dropdown-item" href="#">Something else here</a>
+		        </div>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <button type="button" class="btn btn-outline-primary btn-sm mr-2" data-toggle="modal" data-target="#loginModal">登入</button>
+		      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#registerModal">註冊</button>
+		    </form>
+		  </div>
+		</nav>	
+	</div>	
+</section>
+
+<!-- loginModal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title" id="exampleModalLabel">登入服務</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<form action="" class="needs-validation" novalidate>
+      <div class="modal-body">	  		
+  			<div class="form-group">
+  				<label for="">帳號</label>
+  				<input type="email" class="form-control" placeholder="請輸入email帳號" required>
+  			</div>
+  			<div class="form-group">
+  				<label for="">密碼</label>
+  				<input type="password" class="form-control" placeholder="請輸入密碼" required>
+  			</div>
+			<div class="form-group form-check">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label" for="exampleCheck1">記住帳號</label>
+			</div>  		
+      </div>
+
+      <div class="modal-footer">
+      	<a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">註冊新帳號</a>
+      	<div class="ml-auto">
+	      	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button class="btn btn-primary" type="submit">Save changes</button>		
+      	</div>      
+      </div>
+</form>	
+
+    </div>
+  </div>
+</div>
+
+<!-- registerModal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="exampleModalLabel">註冊服務</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<form action="" class="needs-validation-reg" novalidate>
+      <div class="modal-body">
+        <div class="row">
+        	<div class="col-md-6">
+        		<h1>會員條款</h1>
+        		<p>衛生給我們解決特別事件現實面對正是律師懂得數據庫研究，不知感謝聯賽幹什麼使用清晰利益力量數碼居然類似觀看另一小說有，地位研究所他說命令事項食物驅動先進存在，紀念減少代表一番案件你好，影視實現區別都市。</p>
+        	</div>
+        	<div class="col-md-6">
+	  			<div class="form-group">
+	  				<label for="">帳號</label>
+	  				<input type="email" class="form-control" placeholder="請輸入email帳號" required>
+	  			</div>
+	  			<div class="form-group">
+	  				<label for="">密碼</label>
+	  				<input type="password" class="form-control" placeholder="請輸入密碼" required>
+	  			</div>
+	  			<div class="form-group">
+	  				<label for="">確認密碼</label>
+	  				<input type="password" class="form-control" placeholder="請確認密碼" required>
+	  			</div>
+				<div class="form-group form-check">
+				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">記住帳號</label>
+				</div> 
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      	<a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">已有帳號</a>
+      	<div class="ml-auto">
+	      	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button class="btn btn-primary" type="submit">Save changes</button>		
+      	</div> 
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+	<div class="bd-example">
+	  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+	    <ol class="carousel-indicators">
+	      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+	      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+	      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+	    </ol>
+	    <div class="carousel-inner">
+	      <div class="carousel-item active bg-cover" style="background-image: url(images/family01.jpg); height: 280px;">
+	        <div class="carousel-caption d-none d-md-block">
+	          <h5>First slide label Lorem ipsum dolor sit amet.</h5>
+	          <p>Nulla vitae elit libero, a pharetra augue mollis interdum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quis excepturi quisquam temporibus assumenda, repellendus. Qui expedita quod, error accusantium ratione quis quos dolor iste rem dicta pariatur sapiente, quibusdam!</p>
+	        </div>
+	      </div>
+	      <div class="carousel-item bg-cover" style="background-image: url(images/family02.jpg); height: 280px;">
+	        <img src="..." class="d-block w-100" alt="...">
+	        <div class="carousel-caption d-none d-md-block">
+	          <h5>Second slide label Lorem ipsum dolor sit amet.</h5>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse aliquid dolorem quibusdam, voluptas, deleniti accusamus quis praesentium, accusantium fugit asperiores earum. Fugiat cum recusandae, explicabo nobis quis odit blanditiis repellat.</p>
+	        </div>
+	      </div>
+	      <div class="carousel-item bg-cover" style="background-image: url(images/family03.jpg); height: 280px;">
+	        <img src="..." class="d-block w-100" alt="...">
+	        <div class="carousel-caption d-none d-md-block">
+	          <h5>Third slide label Lorem ipsum dolor sit amet.</h5>
+	          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ab temporibus, saepe mollitia tempora ratione debitis! Tempora, laboriosam, nesciunt officiis quidem, totam nemo accusamus eaque aliquam est expedita quibusdam eius.</p>
+	        </div>
+	      </div>
+	    </div>
+	    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+	      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+	      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+	  </div>
+	</div>
+</section>
+
+<section class="bg-info py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 text-white">
+				<div class="text-center">
+					<i class="far fa-angry fa-8x mb-3"></i>			
+					<h1>企業E化服務</h1>
+				</div>
+				<p>你說往往電源電視請求藥物寂寞填寫任意工作人員的確手，上傳外掛起點走到浪費股份，電話公司在我安全財政。</p>
+			</div>
+			<div class="col-md-4 text-white">
+				<div class="text-center">
+					<i class="fas fa-american-sign-language-interpreting fa-8x mb-3"></i>
+					<h1>垂直整合</h1>
+				</div>
+				<p>你說往往電源電視請求藥物寂寞填寫任意工作人員的確手，上傳外掛起點走到浪費股份，電話公司在我安全財政。</p>
+			</div>
+			<div class="col-md-4 text-white">
+				<div class="text-center">
+					<i class="fab fa-apple fa-8x mb-3"></i>
+					<h1>雲端運算規劃</h1>
+				</div>
+				<p>你說往往電源電視請求藥物寂寞填寫任意工作人員的確手，上傳外掛起點走到浪費股份，電話公司在我安全財政。</p>
+			</div>		
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-5" style="position: relative;">
+	<div class="row">
+		<div class="col-md-5 bg-cover" style="background-image: url(images/baker.jpg); position: absolute;top: 0;bottom: 0;"></div>
+	</div>
+	<div class="container">
+		<div class="row justify-content-end">
+			<div class="col-md-7 my-text-white">
+				<h2>本月月租最新方案</h2>
+				<p>都在飛機主動確定請大家投訴聯通協助引用創業培養靈活轉讓破，半年解壓美容只是威脅聰明特徵網站法國買了逐步，說是始終國人開發平靜學者主角音樂商，透露可能會怎樣共享版對我權力黑龍江開心廣大網，存儲尊重方法細胞不想貢獻隊伍停止一股商，早上本月老大金融請在門口施工環節全國圖片考試哈。</p>
+				<a href="#" class="btn btn-outline-info">查看更多</a>
+				<div class="row mt-3">
+					<div class="col-md-6">
+						<h2>SEO整合服務</h2>
+						<p>我覺得使用體力大門衛生多個不可能才，練。一絲精采</p>
+					</div>
+					<div class="col-md-6">
+						<h2>雲端平台整合</h2>
+						<p>我覺得使用體力大門衛生多個不可能才，練班一絲精采。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-5">
+	<div class="container">
+		<h1 class="text-center">雲端加值服務說明</h1>
+		<div class="row mt-5">
+			<div class="col-md-6 d-flex">
+				<i class="fab fa-android fa-8x mr-3"></i>
+				<div>
+					<h2>雲端加值服務說明01</h2>
+					<p>經常躺在這是我這什麼事予以現，上述碩士一支僅供古代之家網通，基本上便是記住某些給他政府成本從事原因預測其中讓你狀態水果。</p>					
+				</div>
+			</div>
+			<div class="col-md-6 d-flex">
+				<i class="fab fa-android fa-8x mr-3"></i>
+				<div>
+					<h2>雲端加值服務說明02</h2>
+					<p>經常躺在這是我這什麼事予以現，上述碩士一支僅供古代之家網通，基本上便是記住某些給他政府成本從事原因預測其中讓你狀態水果。</p>					
+				</div>
+			</div>
+			<div class="col-md-6 d-flex">
+				<i class="fab fa-android fa-8x mr-3"></i>
+				<div>
+					<h2>雲端加值服務說明03</h2>
+					<p>經常躺在這是我這什麼事予以現，上述碩士一支僅供古代之家網通，基本上便是記住某些給他政府成本從事原因預測其中讓你狀態水果。</p>					
+				</div>
+			</div>
+			<div class="col-md-6 d-flex">
+				<i class="fab fa-android fa-8x mr-3"></i>
+				<div>
+					<h2>雲端加值服務說明04</h2>
+					<p>經常躺在這是我這什麼事予以現，上述碩士一支僅供古代之家網通，基本上便是記住某些給他政府成本從事原因預測其中讓你狀態水果。</p>					
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<div class="bg-light py-5" style="position: relative;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7  my-text-white" style="z-index: 100">
+				<h2>企業垂直整合與雲端運算效能分析</h2>
+				<p>這樣考生狀態畢業一流目標說法保障來，病毒安排本地消失鈴聲注意均為坐在就是地說感動觀看由於詢問，充滿。</p>
+				<dl class="row">
+				  <dt class="col-sm-3">LoreLorem ipsum dolor.s</dt>
+				  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+				  <dt class="col-sm-3">Lorem ipsum dolor.</dt>
+				  <dd class="col-sm-9">A description list is description list is perperfect for defining terms.</dd>
+
+				  <dt class="col-sm-3">Malesuada porta</dt>
+				  <dd class="col-sm-9">Etiam porta sdescription list is perem malesuada magna mollis euismod.</dd>
+
+				  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+				  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+
+	<div class="row justify-content-end">
+		<div class="col-md-5 bg-cover" style="
+		background-image: url(images/beauty04.jpg);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		"></div>
+	</div>
+</div>
+
+
+<section class="bg-light py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57844.63616816607!2d121.5852218334231!3d25.02423878483432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abcc15385149%3A0xedda4225bb1305b9!2z5o236YGL5L-h576p5a6J5ZKM56uZ!5e0!3m2!1szh-TW!2stw!4v1552896983088" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="col-md-6">
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">姓名</label>
+				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入姓名">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">密碼</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Eamil</label>
+				    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="請輸入Eamil">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">人數</label>
+				    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="請輸入人數">
+				  </div>
+				  <div class="form-group form-check">
+				    <input type="radio" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">需要素食</label>
+				  </div>
+				  <div class="form-group form-check">
+				    <input type="radio" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">不需要素食</label>
+				  </div>
+				  <div class="text-right">
+					  <button type="submit" class="btn btn-outline-primary">取消</button>
+					  <button type="submit" class="btn btn-primary">送出</button>				  	
+				  </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-light">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 bg-cover" style="background-image: url(images/family01.jpg); height: 300px">
+				<div class="row">
+					<div class="col-md-9 py-5 text-white">
+						<small class="text-warning">加入我們</small>
+						<h1>不同過來簡體大門記住聯盟事，。</h1>
+						<p>創造風景加盟並沒有不多別人活動又是，紛紛固定顯然期間以後啟動重新一半無限很難進程數據庫狀態，春節感。</p>
+						<a href="#" class="btn btn-outline-warning">加入我們</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 bg-cover" style="background-image: url(images/family02.jpg); height: 300px">
+				<div class="row">
+					<div class="col-md-9 py-5 text-white">
+						<small>加入我們</small>
+						<h1>不同過來簡體大門記住聯盟事，。</h1>
+						<p>創造風景加盟並沒有不多別人活動又是，紛紛固定顯然期間以後啟動重新一半無限很難進程數據庫狀態，春節感。</p>
+						<a href="#" class="btn btn-outline-warning">加入我們</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="bg-light py-3 justify-content-center">
+	<div class="container">
+		<div class="row">
+			<nav class="nav">
+			  <a class="nav-link  disabled" href="#">雲端班版權所有 2019.03</a>
+			  <a class="nav-link" href="#">Facebook</a>
+			  <a class="nav-link" href="#">Twitter</a>
+			</nav>				
+		</div>
+	</div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+	</script>
+
+
+	<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+	    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	    var forms = document.getElementsByClassName('needs-validation-reg');
+	    // Loop over them and prevent submission
+	    var validation = Array.prototype.filter.call(forms, function(form) {
+	      form.addEventListener('submit', function(event) {
+	        if (form.checkValidity() === false) {
+	          event.preventDefault();
+	          event.stopPropagation();
+	        }
+	        form.classList.add('was-validated');
+	      }, false);
+	    });
+	  }, false);
+	})();
+	</script>	
+  </body>
+</html>

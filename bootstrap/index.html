@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	    <title>(Bootstrap4.3) Official Website</title>
+
+	    <style>
+		    body{
+		    	font-family: Microsoft JhengHei;
+
+		    }
+
+		    h1, h2, h3, h4, h5, h6{
+		    	font-weight: bold;
+		    }
+	    	#reg{
+	    		background-color: #615959;
+	    		color: blue;
+	    		border: solid 2px #53A6B9;
+	    	}
+	    	.bg-cover{
+		        background-repeat: no-repeat;
+		        background-position: center center;
+		        -webkit-background-size: cover;
+		        background-size: cover;
+		        
+		    }
+		    .carousel-item{
+		        background-color: gray;
+		        
+		        padding :10px;
+		    }
+		    .carousel-caption{
+		        background-color: rgba(0,0,0,0.5);
+		        padding: 15px;
+		        font-size: 16px;
+		        /*font-weight: bold;*/
+
+	    	}
+
+	    	/*576px 一般手機SIZE*/
+	    	@media screen and (max-width: 576px){
+		        .carousel-caption{
+		            display: none;
+		       	}
+		       	    
+	        
+	    	}
+	    	@media screen and (max-width: 768px){
+		       
+		       	.container{
+		       		color: white;
+		       	}        
+	        
+	    	}
+		    footer{
+		        background-color: #000;
+		        color: #fff;
+		        height: 50px;
+		        text-align: center;
+		        font-weight: bold;
+		        font-size: 16px;
+		        padding-top: 10px;
+
+		        margin-top: 20px;
+
+			}
+	    </style>
+  	</head>
+  	
+  	<body>
+	  	<!-- tool bar -->
+	    <div class="bg-secondary ">
+	    	<div class="container ">
+	    		<div class="row justify-content-end">
+	    			<a href="https://www.facebook.com/pj.castle.39">
+	    				<i class="fab fa-facebook-square fa-2x text-white mr-1"></i>
+	    			</a>
+	    			<a href="https://twitter.com/">
+	    				<i class="fab fa-twitter-square fa-2x text-white mr-1"></i>
+	    			</a>
+	    			<a href="https://www.instagram.com/">
+	    				<i class="fab fa-instagram fa-2x text-white"></i>
+	    			</a>  	
+	    		</div>
+	    	</div>
+	    </div>
+
+		<!-- Navbar -->
+	    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	    	<div class="container">
+	    		<a class="navbar-brand" href="https://www.facebook.com/雲端咖啡店-533187727179433/"><i class="fas fa-birthday-cake text-white"></i></a>
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  		</button>
+
+			  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    	<ul class="navbar-nav mr-auto">
+				      	<li class="nav-item active">
+				        	<a class="nav-link" href="#"><span style="color: #4ECE6A">關於我們</span><span class="sr-only">(current)</span></a>
+				      	</li>
+				      
+				      	<li class="nav-item dropdown">
+				        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          	<span style="color: #4ECE6A">點餐種類</span>
+				        	</a>
+				        	<div class="dropdown-menu " style="color: #4ECE6A"aria-labelledby="navbarDropdown">
+					          	<a class="dropdown-item" href="#">Action</a>
+					          	<a class="dropdown-item" href="#">Another action</a>
+					          	<div class="dropdown-divider"></div>
+					          	<a class="dropdown-item" href="#">Something else here</a>
+				       		</div>
+				      	</li>	      
+			    	</ul>
+				    <form class="form-inline my-2 my-lg-0">
+				      	<!-- <button type="button" class="btn btn-outline-success btn-sm mr-2">登入</button> -->
+				      	<!-- Button trigger loginModal -->
+						<button type="button" class="btn btn-outline-success btn-sm mr-2" data-toggle="modal" data-target="#loginModal">登入	</button>
+				      	<!-- <button type="button" class="btn btn-info btn-sm ">註冊</button> -->
+				      	<button type="button" class="btn btn-info btn-sm " data-toggle="modal" data-target="#registModal">註冊</button>
+				    </form>
+			  	</div>
+	    	</div>	  
+		</nav>
+		
+		<!-- loginModal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    
+		    <div class="modal-content">
+		      	
+		      	<div class="modal-header bg-success">
+		        	<h5 class="modal-title text-white" id="exampleModalLabel">Login Modal</h5>
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          		<span aria-hidden="true">&times;</span>
+		        	</button>
+		      	</div>
+
+		    	<form action="" class="needs-validation" novalidate>
+			      	<div class="modal-body">
+			      	
+			      		<div class="form-group">
+			      			<label for="">Email</label>
+			      			<input type="email" class="form-control" id="email" placeholder="Email" required>
+			      		</div>
+			      		<div class="form-group">
+					    	<label for="">Password</label>
+					    	<input type="password" class="form-control" id="password" placeholder="Password" required>
+					  	</div>
+					  	<div class="form-group form-check">
+					    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+					    	<label class="form-check-label" for="exampleCheck1">Check me out</label>
+					  	</div>
+					  	
+			      				        
+			      	</div>
+				    <div class="modal-footer">
+				      	<a href="#" data-toggle="modal" data-target="#registModal" data-dismiss="modal">Register</a>
+				      	<div class="ml-auto">
+				      		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        	<button  class="btn btn-primary" type="submit">Login</button>
+				      	</div>				        
+				    </div>
+
+		    	</form>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- registModal -->
+		<div class="modal fade" id="registModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  	<div class="modal-dialog modal-lg" role="document">
+			    <div class="modal-content">
+			      	<div class="modal-header bg-info">
+			        	<h5 class="modal-title text-white" id="exampleModalLabel">Regist Modal</h5>
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          		<span aria-hidden="true">&times;</span>
+			        	</button>
+			      	</div>
+			      	<form action="" class="needs-validation-reg" novalidate>
+				      	<div class="modal-body">
+					        <div class="row">
+					        	<div class="col-md-6">
+					        		<h2>Register</h2>
+					        		<p>陷入位置沒人第二閲讀者對象一陣，返回污染竟然國際大家接觸高級內置你的反而大聲準備，美元範圍內他不法。</p>
+					        	</div>
+					        	<div class="col-md-6">					        		
+						      		<div class="form-group">
+						      			<label for="">Email</label>
+						      			<input type="email" class="form-control" id="rg-email" placeholder="Email" required>
+						      		</div>
+						      		<div class="form-group">
+								    	<label for="">Password</label>
+								    	<input type="password" class="form-control" id="rg-password" placeholder="Password" required>
+								  	</div>
+								  	<div class="form-group">
+								    	<label for="">Re-Password</label>
+								    	<input type="password" class="form-control" id="rg-repassword" placeholder="Re-Password" required>
+								  	</div>
+								  	<div class="form-group form-check">
+								    	<input type="checkbox" class="form-check-input" id="exampleCheck2" required>
+								    	<label class="form-check-label" for="exampleCheck2">Agree</label>
+								  	</div>
+								  	<!-- <button  class="btn btn-primary" type="submit">demo</button> -->						      	
+					        	</div>
+					        </div>
+
+				      	</div>
+				      	
+				      	<div class="modal-footer">
+					      	<a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Have been Account</a>
+					      	<div class="ml-auto">
+					      		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        	<button type="submit" class="btn btn-primary">Register</button>
+					      	</div>		        
+				      	</div>
+
+			      	</form>
+
+			    </div>
+		  	</div>
+		</div>
+
+
+		<!-- 
+	    Carousel
+	    A slideshow component for cycling through elements, like a carousel. Nested carousels are not supported. -->
+	    <section>
+	    	<div class="bd-example">
+			  	<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+			  		<!-- Indicators -->
+				    <ol class="carousel-indicators">
+				      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+				    </ol>
+				    <!-- Wrapper for slides -->
+				    <div class="carousel-inner">
+				      	<div class="bg-cover carousel-item active" style="background-image: url(img/1.jpg);height: 350px">
+					        <!-- <img src="img/1.jpg" class="d-block w-100 " alt="> -->
+					        <div class="carousel-caption d-none d-md-block">
+					          	<h3 style="color: #AFA62A">First slide label</h3>
+					          	<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					        </div>
+				      	</div>
+				      	<div class="bg-cover carousel-item" style="background-image: url(img/2.jpg);height: 350px">
+					        
+					        <div class="carousel-caption d-none d-md-block">
+					          	<h3 style="color: #3DAABD">Second slide label</h3>
+					          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					        </div>
+				      	</div>
+				      	<div class="bg-cover carousel-item" style="background-image: url(img/3.jpg);height: 350px">
+				      
+					        <div class="carousel-caption d-none d-md-block">
+					          	<h3 style="color: #66E36F">Third slide label</h3>
+					          	<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+					        </div>
+				      	</div>
+				      	<div class="bg-cover carousel-item" style="background-image: url(img/4.jpg);height: 350px">
+				      
+					        <div class="carousel-caption d-none d-md-block">
+					          	<h3 style="color: #66E36F">Fourth slide label</h3>
+					          	<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+					        </div>
+				      	</div>
+				      	<div class="bg-cover carousel-item" style="background-image: url(img/5.jpg);height: 350px">
+				      
+					        <div class="carousel-caption d-none d-md-block">
+					          	<h3 style="color: #66E36F">Fifth slide label</h3>
+					          	<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+					        </div>
+				      	</div>
+				    </div>
+				    <!-- Controls -->
+				    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+				      	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				      	<span class="sr-only">Previous</span>
+				    </a>
+				    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+				      	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				      	<span class="sr-only">Next</span>
+				    </a>
+			  	</div>
+			</div>
+	    </section>
+
+		<!-- fourth region -->
+		<section class="bg-info py-3">
+			<div class="container">
+		    	<div class="row">
+		    		<div class="col-md-4 text-white">
+		    			<div class="content">	    					                    
+		                    <div class="text-center">
+		                    	<i class="fas fa-air-freshener fa-8x"></i>
+		                        <h3>企業E化服務</h3>	                        
+		                    </div>                    
+		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		                </div>
+		    		</div>
+		    		<div class="col-md-4 text-white">
+		    			<div class="content">	    				                    
+		                    <div class="text-center">
+		                    	<i class="fab fa-bitcoin fa-8x"></i>	
+		                        <h3>重直整合</h3>	                        
+		                    </div>
+		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		                </div>
+		    		</div>
+		    		<div class="col-md-4 text-white">
+		    			<div class="content">       
+		                    <div class="text-center">
+		                    	<i class="fab fa-cc-visa fa-8x"></i>
+		                        <h3>雲端運算規劃</h3>	                        
+		                    </div> 
+		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam!</p>                   
+		                </div>
+		    		</div>
+		    	</div>    	
+	    	</div>
+		</section>
+
+		<!-- fifth region -->
+		<!-- py padding top bottom 5 -->
+		<section class="bg-light py-5" style="position: relative;">
+			<div class="row ">
+				<div class="col-md-5 bg-cover " style="background-image: url(http://lorempixel.com/400/200/nature/1);position: absolute;top: 0;bottom: 0;">				
+				</div>
+				
+			</div>
+			<div class="container">
+				<div class="row justify-content-end">
+					<div class="col-md-7">
+						<h3>免費電影擔</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sapiente perferendis repellendus quam similique numquam nesciunt, in, maiores sint excepturi dignissimos libero delectus, cupiditate deserunt voluptate cumque optio corporis iure? Saepe cum eum quisquam dolor dolores molestiae, quod labore sunt earum, illum dignissimos, vel quidem itaque error. Voluptatum, impedit, sit.</p>
+						<a href=""class="btn btn-outline-info">查看更多</a>
+
+						<div class="row mt-3">
+							<div class="col-md-6">
+								<h3>才能獎勵原</h3>
+								<p>意義一起好像不可能你會登記居民兩年，辦。</p>
+							</div>
+							<div class="col-md-6">
+								<h3>低價錄入版</h3>
+								<p>聰明奇蹟部隊傷心安排鎖定，註明破解版近。</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</section>
+
+		<!-- sixth region -->
+		<section class="bg-light py-3">
+			<div class="container">
+				<h2 class=" text-center">
+					登記最終站長不再可惜
+				</h2>
+				<div class="row mt-3">
+					<div class="col-md-6 d-flex text-secondary">
+						<i class="far fa-grin-squint-tears fa-5x mr-2"></i>
+						<div>
+							<h3>方便精美還</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, harum.</p>
+						</div>
+						
+					</div>
+					<div class="col-md-6 d-flex text-info">
+						<i class="fab fa-android fa-5x mr-2"></i>
+						<div>
+							<h3>方便精美還</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, harum.</p>
+						</div>
+						
+					</div>
+					<div class="col-md-6 d-flex text-warning">
+						<i class="fas fa-paw fa-5x mr-2"></i>
+						<div>
+							<h3>方便精美還</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, harum.</p>
+						</div>
+						
+					</div>
+					<div class="col-md-6 d-flex text-success">
+						<i class="fab fa-canadian-maple-leaf fa-5x mr-2"></i>
+						<div>
+							<h3>方便精美還</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, harum.</p>
+						</div>
+						
+					</div>
+					
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- seventh region -->
+		<!-- py padding top bottom 5 -->
+		<section class="bg-light py-5" style="position: relative;">
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 " style="z-index: 100;">
+						<h2>很久免費電</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, recusandae!</p>
+						<dl class="row">
+							
+							<dt class="col-sm-3">Description lists</dt>
+							<dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+							<dt class="col-sm-3">Euismod</dt>
+							<dd class="col-sm-9">
+								<p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+							    <p>Donec id elit non mi porta gravida at eget metus.</p>
+							</dd>
+
+							<dt class="col-sm-3">Malesuada porta</dt>
+							<dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+							<dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+							<dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+							<dt class="col-sm-3">Nesting</dt>
+							<dd class="col-sm-9">
+							<dl class="row">
+								<dt class="col-sm-4">Nested definition list</dt>
+									<dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+								</dl>
+							</dd>
+						</dl>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-end">
+				<div class="col-md-5 bg-cover " style="
+					background-image: url(http://lorempixel.com/200/200/nature/2);
+					position: absolute;
+					top: 0;
+					bottom: 0;">				
+				</div>
+				
+			</div>
+			
+		</section>
+
+		<!-- eight region -->
+		<section class="bg-light py-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14559.902706326076!2d120.61393310000001!3d24.1725858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-CN!2stw!4v1552896962023" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<div class="col-md-6">
+						<form>
+							<div class="form-group">
+						      	<label for="inputEmail4">Username</label>
+						      	<input type="text" class="form-control" id="inputEmail4" placeholder="Username">
+						    </div>
+						    <div class="form-group">
+						      	<label for="inputPassword4">Password</label>
+						      	<input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+						    </div>
+						    <div class="form-group">
+						      	<label for="inputEmail4">Email</label>
+						      	<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+						    </div>
+						    <div class="form-group">
+						      	<label for="inputEmail4">Number</label>
+						      	<input type="text" class="form-control" id="inputEmail4" placeholder="Number">
+						    </div>
+							<div class="form-group form">
+							    <div class="form-check">
+							      	<input class="form-check-input" type="checkbox" id="gridCheck">
+							      	<label class="form-check-label" for="gridCheck">Drink</label>					      
+							    </div>
+							    <div class="form-check ">
+						      		<input class="form-check-input" type="checkbox" id="gridCheck">
+						      		<label class="form-check-label" for="gridCheck">Eat</label>			      
+						    	</div>
+							</div>
+						  
+						  	<div class="text-right">
+						  		<button type="submit" class="btn btn-success ">Send</button>
+						  		<button type="cancel" class="btn btn-outline-danger ">Cancel</button>
+						  	</div>
+						  
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		<!-- night region -->
+		<section class="bg-light">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 bg-cover" style="background-image: url(http://lorempixel.com/200/200/nature/6);height: 300px">
+						<div class="row">
+							<div class="col-md-9 py-5 text-white">
+								<small>免費電影魔</small>
+								<h1>大家都商務驚訝學</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia repudiandae esse laboriosam maiores, iure soluta.</p>
+								<a href="#" class="btn btn-outline-success">Join with us</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 bg-cover" style="background-image: url(http://lorempixel.com/200/200/nature/7);height: 300px">
+						<div class="row">
+							<div class="col-md-9 py-5 text-white">
+								<small>以為版主長</small>
+								<h1>思維宣佈他的資產</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo velit dicta dolorem repellendus accusantium fuga!</p>
+								<a href="#" class="btn btn-outline-success ">Join with us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+
+
+
+
+    	<!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    var forms = document.getElementsByClassName('needs-validation');
+		    // Loop over them and prevent submission
+		    var validation = Array.prototype.filter.call(forms, function(form) {
+		      form.addEventListener('submit', function(event) {
+		        if (form.checkValidity() === false) {
+		          event.preventDefault();
+		          event.stopPropagation();
+		        }
+		        form.classList.add('was-validated');
+		      }, false);
+		    });
+		  }, false);
+		})();
+		</script>
+
+		<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    var forms = document.getElementsByClassName('needs-validation-reg');
+		    // Loop over them and prevent submission
+		    var validation = Array.prototype.filter.call(forms, function(form) {
+		      form.addEventListener('submit', function(event) {
+		        if (form.checkValidity() === false) {
+		          event.preventDefault();
+		          event.stopPropagation();
+		        }
+		        form.classList.add('was-validated');
+		      }, false);
+		    });
+		  }, false);
+		})();
+		</script>
+
+		<script>
+			$('.carousel').carousel({
+			  interval: 2000
+			})
+		</script>
+
+
+
+  	</body>
+
+  	<footer class="bg-light">
+	    <!-- <div>
+	      <i class="fab fa-weixin fa-2x mr-3" style="background-color: green;"></i>@官網.Official 2019.03 版權所有 By Castle       
+	    </div> -->
+	    <div class="container">
+	    	<div class="row">
+	    		<nav class="nav ">
+				  <a class="nav-link disabled" href="#">@官網.Official 2019.03 版權所有 By Castle</a>
+				  <a class="nav-link" href="#"><i class="fab fa-facebook-square fa-2x text-blue "></i></a>
+				  <a class="nav-link" href="#"><i class="fab fa-twitter-square fa-2x text-dark "></i></a>
+				  
+				</nav>
+	    	</div>
+	    </div>
+  	</footer>
+</html>

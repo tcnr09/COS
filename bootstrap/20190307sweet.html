@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap SWEET Template</title>
+
+    <!-- My style themes 20190223 by Castle -->
+    <!-- http://themeroller.jquerymobile.com -->
+    <link rel="stylesheet" href="themes/mystyle.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    	body {
+    		/*背景颜色*/
+    		background-color: #ccc;
+    		/*背景图像*/
+    		/*background-image: url(http://lorempixel.com/400/200/food);*/
+        background-image: url(img/home.jpg);
+    		/*背景图像 - 设置定位与不平铺(no-repeat) 水平或垂直平铺 (repeat-x),*/
+    		background-repeat: repeat-x;
+    		/*设置背景图像是否固定或者随着页面的其余部分滚动
+    		scroll	背景图片随页面的其余部分滚动。这是默认
+			fixed	背景图像是固定的
+			inherit	指定background-attachment的设置应该从父元素继承*/
+    		background-attachment: fixed;
+    		/*设置背景图像的起始位置*/
+    		background-position: center center;
+    		/*指定背景图片大小
+    		length	设置背景图片高度和宽度。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为 auto(自动)
+			percentage	将计算相对于背景定位区域的百分比。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为"auto(自动)"
+			cover	此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。
+			contain	此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。*/
+    		-webkit-background-size: cover;
+    		background-size: cover;
+    	}
+
+    	.caketxt{
+    		width: 500px;
+    		height: 180px;
+    		background-color: rgba(254,172,0,0.5);
+    		position: absolute;
+    		top: 30%;
+    		left: 10%;
+    		padding: 10px;
+    		color: white;
+
+    	}
+
+    	.caketxt2{
+    		width: 500px;
+    		height: 180px;
+    		background-color: rgba(168,150,224,0.5);
+    		position: absolute;
+    		top: 30%;
+    		right: 10%;
+    		padding: 10px;
+    		color: white;
+
+    	}
+    	/*576px 一般手機SIZE*/
+    	@media screen and (max-width: 1250px){
+    		.caketxt{
+    			width: 100%;
+    			height: auto;
+    			left: 0;
+    			top: 52px;
+    			color: gray;
+    			background-color: rgba(193,228,1,0.5);
+    		}
+
+    		.caketxt2{
+    			width: 100%;
+    			height: auto;
+    			left: 0;
+    			top: 251px;
+    			color: pink;
+    			background-color: rgba(112,204,225,0.5);
+
+    		}
+    		
+    	}
+
+      .navbar-inverse{
+        border-radius: 0;
+      }
+      .mr5{
+        margin-right: 5px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+  	<nav class="navbar navbar-inverse" role="navigation">
+  		<div class="container-fluid">
+  			<!-- Brand and toggle get grouped for better mobile display -->
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+  				<a class="navbar-brand" href="https://www.facebook.com/雲端咖啡店-533187727179433/"><i class="mr5 fas fa-school"></i>雲端咖啡店</a>
+  			</div>
+  	
+  			<!-- Collect the nav links, forms, and other content for toggling -->
+  			<div class="collapse navbar-collapse navbar-ex1-collapse">
+  				<ul class="nav navbar-nav">
+  					<!-- Region I -->
+            <li class="active">
+              <a href="#">
+                <i class="mr5 fas fa-chalkboard-teacher"></i>
+                點餐 <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#">
+                <i class="mr5 fas fa-chalkboard-teacher"></i>
+                cos卡 <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="mr5 fas fa-chalkboard-teacher"></i>
+                紀錄 <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="mr5 fas fa-chalkboard-teacher"></i>
+                訊息 <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            
+  				</ul>
+  				
+  				<ul class="nav navbar-nav navbar-right">
+  					<li class="active"><a href="#"><span class="mr5 glyphicon glyphicon-home"></span>首頁</a></li>
+  					<li><a href="20190307about.html"><span class="mr5 glyphicon glyphicon-info-sign"></span>關於我們</a></li>
+  					<li><a href="20190307product.html"><span class="mr5 glyphicon glyphicon-list"></span>產品介紹</a></li>
+            <li><a href="20190307member.html"><span class="mr5 glyphicon glyphicon-user"></span>成員介紹</a></li>
+  					
+  				</ul>
+  			</div><!-- /.navbar-collapse -->
+  		</div>
+  	</nav>
+
+  	<div class="caketxt text-center">
+  		<h1>今日推薦:碳燒虱目魚</h1>
+  		<p>藉炭爐的火侯，將肉質細緻、營養價值高的虱目魚，慢烤約一小時，除能保留原優質蛋白質、礦物質、維生素等含量外，另鮮甜爽口且垂涎欲滴。</p>
+  	</div>
+
+  	<div class="caketxt2 text-center">
+  		<h1>田園蔬果沙拉</h1>
+  		<p>季節生菜及水果所搭配。</p>
+  	</div>
+
+  	<!-- <div class="container-fluid">
+  		<div class="row">
+  			<img src="http://lorempixel.com/400/200/food">
+  		</div>
+
+  		
+  	</div> -->
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+
+
+</html>

@@ -1,0 +1,440 @@
+
+.logo{
+	width: 200;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.productcover{
+	width: 260px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	/*box-shadow: h-shadow v-shadow blur spread color inset;
+	h-shadow 	必需的。水平阴影的位置。允许负值
+	v-shadow 	必需的。垂直阴影的位置。允许负值
+	blur 		可选。模糊距离
+	spread 		可选。阴影的大小
+	color 		可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+	inset 		可选。从外层的阴影（开始时）改变阴影内侧阴影*/
+	box-shadow: 10px 10px 5px 10px #505050;
+	border-radius: 20px;
+
+}
+/*#ID*/
+#pname{
+	font-size:32px;
+	font-style:normal;
+	font-weight:bold;
+	color: #FF6633;
+	text-align:center;
+
+}
+
+#pimg{
+	width: 30%;
+	height: 128
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#play , #qa ,#openPan-r{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+
+}
+/*
+17 种标准色是 : 
+	aqua, black, blue, fuchsia, gray, green, 
+	lime, maroon, navy, olive, orange, purple, 
+	red, silver, teal, white, yellow。
+*/
+.led{
+	width: 20%;
+	height: 10vw;	
+	/*up left down right*/
+	margin :0 auto 0 auto ;
+	border-radius: 50%;
+	border: solid 20px;
+}
+
+.led01{
+	background-color: red ;
+	
+}
+
+.led02{
+	background-color: yellow ;
+	
+}
+
+.led03{
+	background-color: green ;
+	
+}
+
+#play:hover{
+	
+	transition: width 2s, height 2s, transform 2s;
+	transform:rotate(360deg);
+	background: linear-gradient(to right ,red,orange,yellow,green,blue,indigo,violet );
+}
+
+#qa:hover{
+	/*
+	background: linear-gradient(angle, color-stop1, color-stop2); 
+	*/
+	/*background: radial-gradient(red, green, blue); */
+	background: linear-gradient(to right ,red,orange,yellow,green,blue,indigo,violet );
+
+}
+
+#grad-demo {
+	width:40%;
+	background: linear-gradient(to bottom right , rgba(255,0,0,0),rgba(255,255,0,0.5), rgba(123,255,255,1));
+	color: black;
+	/*一定要将div设置为inline-block*/
+	display: inline-block; 
+	/*设置该元素在父元素中的位置*/
+	vertical-align: middle;
+	line-height: 100%;
+	border: 3px solid violet;
+	text-align: center;
+}
+
+#grad-demo:hover{
+	/*
+	background: linear-gradient(angle, color-stop1, color-stop2); 
+	*/
+	/*background: radial-gradient(red, green, blue); */
+	background: linear-gradient(to right bottom ,red,orange,yellow,green,blue,indigo,violet );
+
+}
+
+.msgstyle {
+    /*background-color: lightgrey;*/
+    width: 300px;
+    border: 5px solid lightgrey;
+    padding: 25px;
+	margin: 25px;
+}
+
+#message {
+	/*
+		提示：17 种标准色 : 
+		aqua, black, blue, fuchsia, 
+		gray, green, lime, maroon, 
+		navy, olive, orange, purple, lightgrey,
+		red, silver, teal, white, yellow。
+	*/
+	font-size: 20px;
+	color: white;
+	/*background: linear-gradient(to bottom right, red ,green, blue); */
+	background: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+/*20190118 for exammember.html*/
+.myhmoemsg {
+    /*background-color: lightgrey;*/
+    width: 60%;
+    border: 5px solid lightgrey;
+    padding: 25px;
+	margin: 25px;
+}
+
+
+.myhmoemsg2 {
+    /*background-color: lightgrey;*/
+    width: 60%;
+    border: 5px solid orange;
+    padding: 25px;
+	margin: 25px;
+}
+
+.homeimg{
+	width: 30%;
+	margin:0 auto 0 auto;
+	box-shadow: 10px 10px 5px 10px #505050;
+	border-radius: 20px;
+
+}
+
+/*20190118 for exammember.html*/
+#member_regmsg{
+	width:60%;
+	font-size: 20px;
+	/*background: linear-gradient(to bottom right , rgba(255,0,0,0),rgba(255,255,0,0.5), rgba(123,255,255,1));*/
+	background-color: grey ;
+	color: purple;
+	/*一定要将div设置为inline-block*/
+	display: inline-block; 
+	/*设置该元素在父元素中的位置*/
+	vertical-align: middle;
+	line-height: 100%;
+	border: 3px solid violet;
+	text-align: center;
+}
+
+#member_regmsg:hover{
+	/*
+	background: linear-gradient(angle, color-stop1, color-stop2); 
+	*/
+	/*background: radial-gradient(red, green, blue); */
+	background: linear-gradient(to right bottom ,red,orange,yellow,green,blue,indigo,violet );
+
+}
+
+/*20190120 Author PJ for exammember.html*/
+.photo_popup{
+	width: 50%;
+	margin:0 auto 0 auto;
+	box-shadow: 5px 5px 2px 5px #5f5f5f;
+	border-radius: 5%;
+
+}
+.photo_set{
+	width: 80%;
+	margin:0 auto 0 auto;
+	box-shadow: 10px 10px 5px 10px #505050;
+	border-radius: 5%;
+
+}
+
+div.polaroid
+{
+	width:294px;
+	padding:10px 10px 20px 10px;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:2px 2px 3px #aaaaaa;
+}
+
+div.rotate_left
+{
+	float:left;
+	/* -ms-transform:rotate(8deg); IE 9 */
+	/*-webkit-transform:rotate(8deg);  Safari and Chrome */
+	transform:rotate(8deg);
+}
+
+div.rotate_right
+{
+	float:left;
+	/* -ms-transform:rotate(-8deg); IE 9 */
+	/*-webkit-transform:rotate(-8deg);  Safari and Chrome */
+	transform:rotate(-8deg);
+
+}
+
+/*20190121 Google Map View */
+div.gmap
+{
+	width:60%;
+	height:100vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+
+.myimg{
+	width: 30vw;
+	height: 30vw;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	/*box-shadow: h-shadow v-shadow blur spread color inset;
+	h-shadow 	必需的。水平阴影的位置。允许负值
+	v-shadow 	必需的。垂直阴影的位置。允许负值
+	blur 		可选。模糊距离
+	spread 		可选。阴影的大小
+	color 		可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+	inset 		可选。从外层的阴影（开始时）改变阴影内侧阴影*/
+	box-shadow: 10px 10px 5px 10px #505050;
+	border-radius: 50%;
+
+}
+/*20190125 author PJ for travel maps*/
+
+div.travel_gmap
+{
+	width:50%;
+	height:80vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+
+.mytravelimg{
+	width: 8vw;
+	height: 8vw;
+	margin: 0,auto,0,auto;	
+	box-shadow: 5px 5px 5px 5px #505050;
+	border-radius: 50%;
+
+}
+
+/*20190128 author PJ for travel maps*/
+
+div.myfood_gmap
+{
+	width:50%;
+	height:80vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+
+.myfoodimg{
+	width: 8vw;
+	height: 8vw;
+	margin: 0,auto,0,auto;	
+	box-shadow: 5px 5px 5px 5px #505050;
+	border-radius: 50%;
+
+}
+
+/*20190129 author PJ for Parking maps*/
+
+div.mycar_div
+{
+	width:50%;
+	height:80vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+/*20190130 author PJ for Parking maps*/
+div.mycar_gmap
+{
+	width:30vw;
+	height:20vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:2px solid #BFBFBF;
+	background-color:lightgrey;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+
+.mycarimg{
+	width: 8vw;
+	height: 8vw;
+	margin: 0,auto,0,auto;	
+	box-shadow: 5px 5px 5px 5px #505050;
+	border-radius: 50%;
+
+}
+/*20190208 author PJ for Hotel maps*/
+.mytitle {
+	/*
+		提示：17 种标准色 : 
+		aqua, black, blue, fuchsia, 
+		gray, green, lime, maroon, 
+		navy, olive, orange, purple, lightgrey,
+		red, silver, teal, white, yellow。
+	*/
+	/*font-size: 20px;*/
+	color: black;
+	/*background: linear-gradient(to bottom right, red ,green, blue); */
+	background: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+
+/*20190209 author PJ for travel maps*/
+
+div.myhotel_gmap
+{
+	width:50%;
+	height:80vw;
+	padding:10px 10px 20px 10px;
+	margin:0 auto 0 auto;
+	border:1px solid #BFBFBF;
+	background-color:white;
+	/* Add box-shadow */
+	box-shadow:5px 5px 3px #ffaaff;
+	border-radius: 5%;
+}
+
+.myhotel_img{
+	width: 15vw;
+	height: 15vw;
+	margin:0 auto 0 auto;
+	/*box-shadow: h-shadow v-shadow blur spread color inset;
+	h-shadow 	必需的。水平阴影的位置。允许负值
+	v-shadow 	必需的。垂直阴影的位置。允许负值
+	blur 		可选。模糊距离
+	spread 		可选。阴影的大小
+	color 		可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+	inset 		可选。从外层的阴影（开始时）改变阴影内侧阴影*/
+	box-shadow: 10px 10px 5px 10px #505050;
+	border-radius: 50%;
+
+}
+/*for bs07.html*/
+.mytxt{
+	text-align: center;
+
+}
+
+@media screen and (max-width: 768px) {
+	/*少於768PX才使用*/
+	.table-rwd thead{
+		display: none;
+
+	}
+	.table-rwd tbody tr{
+		display: block;
+		border: 2px solid purple;
+		margin: 10px 0;
+	}
+	.table-rwd tbody tr td{
+		display: block;
+	}
+	.table-rwd tbody tr td:before{
+		content: attr(data-th);
+		color: maroon;
+		display: block;
+		float: left;
+		width: 30%;
+
+	}
+	.table-rwd tbody tr td span .table-col{
+		
+		display: block;
+		float: left;
+		width: 70%;
+
+	}
+
+}
+
+

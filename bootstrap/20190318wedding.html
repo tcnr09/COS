@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap WEDDING Template</title>
+
+    <!-- My style themes 20190223 by Castle -->
+    <!-- http://themeroller.jquerymobile.com -->
+    <link rel="stylesheet" href="themes/mystyle.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<style type="text/css">
+    .navbar-default {
+        background-color: #fff;
+        border-color: #fff;
+         
+    }
+    
+    .navbar{
+        background-color: white;
+        padding-top: 25px;
+    }
+
+    .navbar-brand{
+        color: #ca44ce;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+       
+   
+    .bg-cover{
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+    }
+
+    .carousel-caption{
+        background-color: rgba(0,0,0,0.5);
+        padding: 15px;
+        font-weight: bold;
+
+    }
+    
+
+    /*576px 一般手機SIZE*/
+    @media screen and (max-width: 576px){
+        .carousel-caption{
+            display: none;
+        }
+        
+    }
+
+    .item{
+        background-color: gray;
+        font-size: 24px;
+        padding :10px;
+
+    }
+
+    .item li{
+        list-style-type: none;
+    }
+    .mt10{
+        margin-top: 10px;
+    }
+    .mr5{
+        margin-right: 5px;
+    }
+    .content{
+        
+        /*box-shadow: h-shadow v-shadow blur spread color inset;
+        h-shadow    必需的。水平阴影的位置。允许负值
+        v-shadow    必需的。垂直阴影的位置。允许负值
+        blur        可选。模糊距离
+        spread      可选。阴影的大小
+        color       可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+        inset       可选。从外层的阴影（开始时）改变阴影内侧阴影*/
+        box-shadow: 5px 5px 2px 5px #505050;
+        border-radius: 10px;
+        border-color: #98ADC1;
+
+    }
+    .text{
+        padding: 5px;
+    }
+
+    footer{
+        background-color: #000;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 10px;
+        padding-top: 20px;
+        margin-top: 20px;
+
+    }
+</style>
+
+
+
+  </head>
+
+
+  <body>
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">WEDDING</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WEDDING</a>
+            </div>
+    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">                
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" style="color: #FF5200">彩妝照型</a></li>
+                    <li><a href="#" style="color: #FF5200">婚禮紀錄</a></li>
+                    <li><a href="#" style="color: #FF5200">主題攝影</a></li>
+                    <li><a href="#" style="color: #FF5200">婚紗禮服</a></li>
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- 
+    Carousel
+    A slideshow component for cycling through elements, like a carousel. Nested carousels are not supported. -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="bg-cover item active" style="background-image: url(img/1.jpg);height: 350px">
+          
+          <div class="carousel-caption">
+            <h2>百度你能大小對她相比</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur qui officiis libero unde perferendis est, ducimus earum alias quis accusamus eos, eaque voluptatum sunt omnis inventore, dolore saepe iure debitis.</p>
+            
+           
+          </div>
+        </div>
+
+        <div class="bg-cover item " style="background-image: url(img/2.jpg);height: 350px">
+          
+          <div class="carousel-caption">
+            <h2>完整用來音樂網未來床</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur qui officiis libero unde perferendis est, ducimus earum alias quis accusamus eos, eaque voluptatum sunt omnis inventore, dolore saepe iure debitis.</p>          
+          </div>
+        </div>
+
+        <div class="bg-cover item " style="background-image: url(img/3.jpg);height: 350px">
+          
+          <div class="carousel-caption">
+            <h2>健康其實離線主動插入</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur qui officiis libero unde perferendis est, ducimus earum alias quis accusamus eos, eaque voluptatum sunt omnis inventore, dolore saepe iure debitis.</p>          
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="container">
+        <div class="row mt10">
+            <div class="col-md-4">
+                <div class="item">
+                    <ol>
+                        <li><i class="fab fa-android mr5"></i>手中投資者放棄傳奇人</li>
+                        <li><i class="fas fa-at mr5"></i>你還不能下載也能也有</li>
+                        <li><i class="fab fa-earlybirds mr5"></i>速度廣泛評分突然公園</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <h3 class="text-center">容量面前集體意外配件</h3>
+                    <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis sapiente nulla, nam non maiores eaque eum fugiat consequatur reprehenderit.</p>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+
+
+    <div class="container">
+        <div class="row mt10">
+            <div class="col-md-3">
+                <div class="content">
+                    <img src="http://lorempixel.com/400/200/nature/1" class="img-responsive" alt="">
+                    <div class="text">
+                        <h3>航空配置氣</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <img src="http://lorempixel.com/400/200/nature/2" class="img-responsive" alt="">
+                    <div class="text">
+                       <h3>分別城市來</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <img src="http://lorempixel.com/400/200/nature/3" class="img-responsive" alt="">
+                    <div class="text">
+                        <h3>轉移婚姻日</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="content">
+                    <img src="http://lorempixel.com/400/200/nature/4" class="img-responsive" alt="">
+                    <div class="text">
+                        <h3>堅決管理員</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+    </div> 
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+
+  <footer>
+    <div>
+      @婚禮.Wedding 2019.03 版權所有 By Castle
+    </div>
+  </footer>
+</html>
