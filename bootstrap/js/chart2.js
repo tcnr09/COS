@@ -34,14 +34,18 @@ var ctx = document.getElementById("myChartBar").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3,6,6],
+            label: '消費人數',
+            data: [120, 190, 50, 50, 50, 80,560,600,90,50,125,255],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255,255,0, 0.2)',
+                'rgba(0, 255, 0, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255,165,0, 0.2)',
+                'rgba(102,205,170, 0.2)',
                 'rgba(0, 255, 0, 0.2)',
                 'rgba(153, 102, 255, 0.2)',
                 'rgba(255,165,0, 0.2)',
@@ -55,8 +59,12 @@ var myChart = new Chart(ctx, {
                 'rgba(0,128,0, 1)',
                 'rgba(153, 102, 255, 1)',
                 'rgba(255,140,0, 1)',
-                'rgba(0,128,128, 0.2)',
-                'rgba(139,0,0, 0.2)'
+                'rgba(0,128,128, 1)',
+                'rgba(0,128,0, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255,140,0, 1)',
+                'rgba(0,128,128, 1)',
+                'rgba(139,0,0, 1)'
             ],
             borderWidth: 1
         }]
