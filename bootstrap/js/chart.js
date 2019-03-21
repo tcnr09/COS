@@ -5,7 +5,7 @@ $(function(){
         dataType:"json",
         success:show,
         error:function(){
-            alert("error Chart Get");
+            alert("error Chart Get1");
         }
     });
 
