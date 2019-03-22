@@ -3,7 +3,7 @@
 	header('Access-Control-Allow-Origin:*');
 	
 	function connection_sql(){
-		$link = mysqli_connect("localhost","owner","123456")
+		$link = mysqli_connect("localhost","id7769595_tcnr20","123456")
 		or die("Can't connection Server ".mysqli_connect_error());
 
 		mysqli_query($link,"SET NAMES UTF8");
@@ -13,8 +13,7 @@
 	}
 
 	function execute_sql($link,$dbname,$sql){
-		mysqli_select_db($link,$dbname)
-		or die("Can't link DB ".mysqli_error($link));
+		mysqli_select_db($link,$dbname) or die("Can't link DB ".mysqli_error($link));
 
 		$result = mysqli_query($link,$sql);
 
