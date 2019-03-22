@@ -1,211 +1,425 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Document</title>
-	<!-- Google Map API -->
-	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeaCCcrAPLsEXIxsaRo6dOV97yhEVRmqc"></script>
-	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-	<script src="js/jquery-2.1.0.min.js"></script>
-	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<style type="text/css">
-		#map_div{
-			width: 350px;
-			height: 600px;
-			margin-top: 0;
-			margin-bottom: 0;
-			margin-left: auto;
-			margin-right: auto;
-			background-color: #ccc;
-			box-shadow: 3px 3px 3px 3px #ccc;
-		}
-		.info{
-			width: 150px;
-			height: 150px;
-			margin-top: 0;
-			margin-bottom: 0;
-			margin-left: auto;
-			margin-right: auto;
-			border-radius: 75px;
-		}
-	</style>
-	<script>	
-		// var parray=[];
-		$(function(){
-			$.ajax({
-			  type:"GET",
-			  url:"https://tcnr1620.000webhostapp.com/JQM/php/opendata_get_file_content.php",
-			  dataType:"json",
-			  success:show,
-			  error:function(){
-			  	alert("error Ajax Get");
-			  }
-			});
-		});
-
-		function show(data){
-			// alert(data[0].Coordinate);			
-//到77行    // parray=data[0].Coordinate.split(",");		
-			//----計算地球上兩點的距離----------
-		function getDistance(Lat1, Long1, Lat2, Long2){
-			ConvertDegreeToRadians=function(degrees){
-				return (Math.PI/180)*degrees;
-			}
-			var Lat1r = ConvertDegreeToRadians(Lat1);
-			var Lat2r = ConvertDegreeToRadians(Lat2);
-			var Long1r = ConvertDegreeToRadians(Long1);
-			var Long2r = ConvertDegreeToRadians(Long2);
-			var R = 6371; // 地球半徑(km)
-			var d = Math.acos(Math.sin(Lat1r) * Math.sin(Lat2r) +
-			Math.cos(Lat1r) * Math.cos(Lat2r) * Math.cos(Long2r-Long1r)) * R;
-			return d; // 兩點的距離 (KM)
-		}
-//-----地圖開始-------------------------------------------
-	$(function(){
-// google.maps.LatLng(經度與緯度)##1##
-// google.maps.Map()共包含了三個參數
-// zoom: 設定地圖的縮放比例
-// Center:設定地圖中心點的經緯度，必須是LatLng 物件型態
-// mapTypeId: 設定地圖的型態
-// google.maps.MapTypeId.SATELLITE: 衛星地圖
-// google.maps.MapTypeId.HYBRID:衛星與街景混合地圖
-//google.maps.MapTypeId.TERRAIN:顯示具有高度、山峰與河流的地圖
-		//設定地圖的中心點
-		var map_div=document.getElementById("map_div");
-		//分割字元
-		parray=data[0].Coordinate.split(",");
-		//取得地圖的中心點
-		var lat=parray[0];
-		var lng=parray[1];
-		var latlng = new google.maps.LatLng(lat,lng);
-		var gmap=new google.maps.Map(map_div,{
-			zoom:7,
-			center:latlng,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-		});	
-// google.maps.Marker() 共四個參數##2##
-// 1.position: 地標的經緯度必需為LatLng物件型態
-// 2.iocn: 圖示的位址
-// 3.gmap: 即為var gmap= new google.maps.Map()建立的地圖
-// 4.tilte: 移動到地標時所提示的訊息
-// google.maps.event.addListener()共三個參數##3##
-// 1.marker: 為碰觸的地標，當按下click即會觸發function(event)函式
-// 2. "click": click事件發生
-// 3. function(): 出發的事件
-// google.maps.InfoWindow: 彈出的訊息視窗
-// infowindow.open(); 在google map 開啟訊息視窗
-		var marker=[];
-		for(i=0;i<data.length;i++){
-		//分割字元
-			parray = data[i].Coordinate.split(",");
-			var lat=parray[0];
-			var lng=parray[1];
-		//輸入經緯度	
-			latlng = new google.maps.LatLng(lat,lng);
-				 marker[i] = new google.maps.Marker({
-					position: latlng,
-					icon:"image/icon001.ico",
-					map: gmap,
-					title: " MY Company!! "+i//第幾個店家
-					});
-
-
-			google.maps.event.addListener(marker[i], "click", function(event){
-						//觸碰地圖時取得的座標(2行)
-						var lat=event.latLng.lat();
-						var lng=event.latLng.lng();
-					for(j=0;j<data.length;j++){
-
-				//分割字元
-						parrayc = data[j].Coordinate.split(",");
-						var latc=parrayc[0];
-						var lngc=parrayc[1];
-				//輸入經緯度		
-						var disp=getDistance(lat,lng,latc,lngc);
-						if(disp<0.001){
-							var infowindow = new google.maps.InfoWindow({
-								// content:'<div><img src="image/Q001.png" alt="" class="info"><br><p>~阿爾布拉罕宮~</p><p>~盛唐幻夜~</p></div>'
-								content:'<div><img src="'+data[j].PicURL+'" alt="" class="info"><br></div><p>'+data[j].Name+"</p>"
-							});
-						infowindow.open(gmap,marker[j]);
-						}//if	
-					}//for				
-			});
-		}//end for
-
-	});//end fun
-		}//end show(data)
-	</script>
-</head>
-<body>
-	<!-- home -->
-	<div data-role="page" id="home">
-		<div data-role="header" data-theme="b" data-position="fixed">
-			<a href="member-main.html" rel="external" class="ui-btn-left" data-icon="cloud"  style="background: #3fa654">COS</a>
-			<h1>OPENDATA MAP</h1>
-		</div>
-		<div data-role="main" class="ui-content">
-			<div id="map_div">
-			</div>
-			
-			<!-- 按鈕區 -->
-			<!-- <div><a href="#" data-role="button" data-theme="b" id="btn_ok">確定</a></div>
-			<div id="showmsg"></div> -->
-		</div>
-		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h1>頁尾</h1>
-		</div>
-	</div>
-</body>
-</html>
-
-<!-- // alert(parray[0]);
-			// alert(parray[1]);
-//開始畫地圖
-			$(function(){
-// google.maps.LatLng(經度與緯度)
-// google.maps.Map()共包含了三個參數
-// zoom: 設定地圖的縮放比例
-// Center:設定地圖中心點的經緯度，必須是LatLng 物件型態
-// mapTypeId: 設定地圖的型態
-// google.maps.MapTypeId.SATELLITE: 衛星地圖
-// google.maps.MapTypeId.HYBRID:衛星與街景混合地圖
-// google.maps.MapTypeId.TERRAIN:顯示具有高度、山峰與河流的地圖
-			//設定地圖的中心點
-			var map_div=document.getElementById("map_div");
-			//取得地圖的中心點
-			var lat=parray[0];
-			var lng=parray[1];
-			var latlng = new google.maps.LatLng(lat,lng);
-			var gmap=new google.maps.Map(map_div,{
-				zoom:14,
-				center:latlng,
-				mapTypeId:google.maps.MapTypeId.ROADMAP
-			});	
-// google.maps.Marker() 共四個參數
-// 1.position: 地標的經緯度必需為LatLng物件型態
-// 2.iocn: 圖示的位址
-// 3.gmap: 即為var gmap= new google.maps.Map()建立的地圖
-// 4.tilte: 移動到地標時所提示的訊息
-			var marker = new google.maps.Marker({
-			position: latlng,
-			// icon:"image/ic01.png",
-			map: gmap,
-			title: " MY Company!! "
-			});
-// google.maps.event.addListener()共三個參數
-// 1.marker: 為碰觸的地標，當按下click即會觸發function(event)函式
-// 2. "click": click事件發生
-// 3. function(): 出發的事件
-// google.maps.InfoWindow: 彈出的訊息視窗
-// infowindow.open(); 在google map 開啟訊息視窗
-		google.maps.event.addListener(marker, "click", function(event){
-			var infowindow = new google.maps.InfoWindow({
-				// content:'<div><img src="image/g029.jpg" alt="" class="info"><br><p>~阿爾布拉罕宮~</p></div>'
-				content:'<div><img src="'+pimg+'" alt="" class="info"><br></div>'+"<p>"+pname+"</p>"
-			});
-			infowindow.open(gmap,marker);
-		});
-
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Document</title>
+
+	<!-- Google Map API -->
+
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeaCCcrAPLsEXIxsaRo6dOV97yhEVRmqc"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+
+	<script src="js/jquery-2.1.0.min.js"></script>
+
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<style type="text/css">
+
+		#map_div{
+
+			width: 350px;
+
+			height: 600px;
+
+			margin-top: 0;
+
+			margin-bottom: 0;
+
+			margin-left: auto;
+
+			margin-right: auto;
+
+			background-color: #ccc;
+
+			box-shadow: 3px 3px 3px 3px #ccc;
+
+		}
+
+		.info{
+
+			width: 150px;
+
+			height: 150px;
+
+			margin-top: 0;
+
+			margin-bottom: 0;
+
+			margin-left: auto;
+
+			margin-right: auto;
+
+			border-radius: 75px;
+
+		}
+
+	</style>
+
+	<script>	
+
+		// var parray=[];
+
+		$(function(){
+
+			$.ajax({
+
+			  type:"GET",
+
+			  url:"https://tcnr1620.000webhostapp.com/JQM/php/opendata_get_file_content.php",
+
+			  dataType:"json",
+
+			  success:show,
+
+			  error:function(){
+
+			  	alert("error Ajax Get");
+
+			  }
+
+			});
+
+		});
+
+
+
+		function show(data){
+
+			// alert(data[0].Coordinate);			
+
+//到77行    // parray=data[0].Coordinate.split(",");		
+
+			//----計算地球上兩點的距離----------
+
+		function getDistance(Lat1, Long1, Lat2, Long2){
+
+			ConvertDegreeToRadians=function(degrees){
+
+				return (Math.PI/180)*degrees;
+
+			}
+
+			var Lat1r = ConvertDegreeToRadians(Lat1);
+
+			var Lat2r = ConvertDegreeToRadians(Lat2);
+
+			var Long1r = ConvertDegreeToRadians(Long1);
+
+			var Long2r = ConvertDegreeToRadians(Long2);
+
+			var R = 6371; // 地球半徑(km)
+
+			var d = Math.acos(Math.sin(Lat1r) * Math.sin(Lat2r) +
+
+			Math.cos(Lat1r) * Math.cos(Lat2r) * Math.cos(Long2r-Long1r)) * R;
+
+			return d; // 兩點的距離 (KM)
+
+		}
+
+//-----地圖開始-------------------------------------------
+
+	$(function(){
+		//全局的infowindow 解决google map中点击一个infowindow关闭其他infowindow
+	var infowindow = new google.maps.InfoWindow();	
+
+// google.maps.LatLng(經度與緯度)##1##
+
+// google.maps.Map()共包含了三個參數
+
+// zoom: 設定地圖的縮放比例
+
+// Center:設定地圖中心點的經緯度，必須是LatLng 物件型態
+
+// mapTypeId: 設定地圖的型態
+
+// google.maps.MapTypeId.SATELLITE: 衛星地圖
+
+// google.maps.MapTypeId.HYBRID:衛星與街景混合地圖
+
+//google.maps.MapTypeId.TERRAIN:顯示具有高度、山峰與河流的地圖
+
+		//設定地圖的中心點
+
+		var map_div=document.getElementById("map_div");
+
+		//分割字元
+
+		parray=data[0].Coordinate.split(",");
+
+		//取得地圖的中心點
+
+		var lat=parray[0];
+
+		var lng=parray[1];
+
+		var latlng = new google.maps.LatLng(lat,lng);
+
+		var gmap=new google.maps.Map(map_div,{
+
+			zoom:7,
+
+			center:latlng,
+
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+
+		});	
+
+// google.maps.Marker() 共四個參數##2##
+
+// 1.position: 地標的經緯度必需為LatLng物件型態
+
+// 2.iocn: 圖示的位址
+
+// 3.gmap: 即為var gmap= new google.maps.Map()建立的地圖
+
+// 4.tilte: 移動到地標時所提示的訊息
+
+// google.maps.event.addListener()共三個參數##3##
+
+// 1.marker: 為碰觸的地標，當按下click即會觸發function(event)函式
+
+// 2. "click": click事件發生
+
+// 3. function(): 出發的事件
+
+// google.maps.InfoWindow: 彈出的訊息視窗
+
+// infowindow.open(); 在google map 開啟訊息視窗
+
+		var marker=[];
+
+		for(i=0;i<data.length;i++){
+
+		//分割字元
+
+			parray = data[i].Coordinate.split(",");
+
+			var lat=parray[0];
+
+			var lng=parray[1];
+
+		//輸入經緯度	
+
+			latlng = new google.maps.LatLng(lat,lng);
+
+				 marker[i] = new google.maps.Marker({
+
+					position: latlng,
+
+					icon:"image/icon001.ico",
+
+					map: gmap,
+
+					title: " MY Company!! "+i//第幾個店家
+
+					});
+
+
+
+
+
+			google.maps.event.addListener(marker[i], "click", function(event){
+
+						//觸碰地圖時取得的座標(2行)
+
+						var lat=event.latLng.lat();
+
+						var lng=event.latLng.lng();
+
+					for(j=0;j<data.length;j++){
+
+
+
+				//分割字元
+
+						parrayc = data[j].Coordinate.split(",");
+
+						var latc=parrayc[0];
+
+						var lngc=parrayc[1];
+
+						var strhtml='<div><img src="'+data[j].PicURL+'" alt="" class="info"><br></div><p>'+data[j].Name+"</p>";
+				//輸入經緯度		
+
+						var disp=getDistance(lat,lng,latc,lngc);
+
+						if(disp<0.001){
+
+							// var infowindow = new google.maps.InfoWindow({
+
+							// 	// content:'<div><img src="image/Q001.png" alt="" class="info"><br><p>~阿爾布拉罕宮~</p><p>~盛唐幻夜~</p></div>'
+
+							// 	content:'<div><img src="'+data[j].PicURL+'" alt="" class="info"><br></div><p>'+data[j].Name+"</p>"
+
+							// });
+							infowindow.setContent(strhtml);
+
+							infowindow.open(gmap,marker[j]);
+
+						}//if	
+
+					}//for				
+
+			});
+
+		}//end for
+
+
+
+	});//end fun
+
+		}//end show(data)
+
+	</script>
+
+</head>
+
+<body>
+
+	<!-- home -->
+
+	<div data-role="page" id="home">
+
+		<div data-role="header" data-theme="b" data-position="fixed">
+
+			<a href="member-main.html" rel="external" class="ui-btn-left" data-icon="cloud"  style="background: #3fa654">COS</a>
+
+			<h1>OPENDATA MAP</h1>
+
+		</div>
+
+		<div data-role="main" class="ui-content">
+
+			<div id="map_div">
+
+			</div>
+
+			
+
+			<!-- 按鈕區 -->
+
+			<!-- <div><a href="#" data-role="button" data-theme="b" id="btn_ok">確定</a></div>
+
+			<div id="showmsg"></div> -->
+
+		</div>
+
+		<div data-role="footer" data-theme="b" data-position="fixed">
+
+			<h1>頁尾</h1>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
+
+
+
+<!-- // alert(parray[0]);
+
+			// alert(parray[1]);
+
+//開始畫地圖
+
+			$(function(){
+
+// google.maps.LatLng(經度與緯度)
+
+// google.maps.Map()共包含了三個參數
+
+// zoom: 設定地圖的縮放比例
+
+// Center:設定地圖中心點的經緯度，必須是LatLng 物件型態
+
+// mapTypeId: 設定地圖的型態
+
+// google.maps.MapTypeId.SATELLITE: 衛星地圖
+
+// google.maps.MapTypeId.HYBRID:衛星與街景混合地圖
+
+// google.maps.MapTypeId.TERRAIN:顯示具有高度、山峰與河流的地圖
+
+			//設定地圖的中心點
+
+			var map_div=document.getElementById("map_div");
+
+			//取得地圖的中心點
+
+			var lat=parray[0];
+
+			var lng=parray[1];
+
+			var latlng = new google.maps.LatLng(lat,lng);
+
+			var gmap=new google.maps.Map(map_div,{
+
+				zoom:14,
+
+				center:latlng,
+
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+
+			});	
+
+// google.maps.Marker() 共四個參數
+
+// 1.position: 地標的經緯度必需為LatLng物件型態
+
+// 2.iocn: 圖示的位址
+
+// 3.gmap: 即為var gmap= new google.maps.Map()建立的地圖
+
+// 4.tilte: 移動到地標時所提示的訊息
+
+			var marker = new google.maps.Marker({
+
+			position: latlng,
+
+			// icon:"image/ic01.png",
+
+			map: gmap,
+
+			title: " MY Company!! "
+
+			});
+
+// google.maps.event.addListener()共三個參數
+
+// 1.marker: 為碰觸的地標，當按下click即會觸發function(event)函式
+
+// 2. "click": click事件發生
+
+// 3. function(): 出發的事件
+
+// google.maps.InfoWindow: 彈出的訊息視窗
+
+// infowindow.open(); 在google map 開啟訊息視窗
+
+		google.maps.event.addListener(marker, "click", function(event){
+
+			var infowindow = new google.maps.InfoWindow({
+
+				// content:'<div><img src="image/g029.jpg" alt="" class="info"><br><p>~阿爾布拉罕宮~</p></div>'
+
+				content:'<div><img src="'+pimg+'" alt="" class="info"><br></div>'+"<p>"+pname+"</p>"
+
+			});
+
+			infowindow.open(gmap,marker);
+
+		});
+
+
+
 		});//end fun  -->		
