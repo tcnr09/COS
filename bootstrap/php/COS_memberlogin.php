@@ -44,7 +44,7 @@ $_SESSION["username"]=$_POST['Username'];
 		function login(data){
 			if(data == 1){
 				// location.href = "https://www.google.com.tw/webhp?tab=rw";
-				location.href = "http://192.168.60.109/COS_WebSite/COS_index.html";
+				location.href = "https://tcnr09.github.io/COS/bootstrap/COS_index.html";
 			}else{
 				alert(data);
 			}
