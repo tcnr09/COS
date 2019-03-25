@@ -63,7 +63,7 @@
 	
 		function reg(data){
 			if(data == 1){
-				location.href = "https://tcnr1620.000webhostapp.com/test/COS_memberlogin.php";
+				location.href = "https://tcnr1609.000webhostapp.com/bootstrap/php/COS_memberlogin.php";
 			}else{
 				alert(data);
 			}										
